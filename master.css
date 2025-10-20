@@ -1,0 +1,46 @@
+/**
+ * Universal Scalable Design Tokens - Master Stylesheet
+ * 
+ * This file imports all design token files in the correct order.
+ * Import this single file in your HTML to use all design tokens.
+ * 
+ * Usage:
+ * <link rel="stylesheet" href="path/to/master.css">
+ * 
+ * For theme switching between light and dark mode, replace the light.css
+ * import with dark.css import as needed.
+ */
+
+/* 1. Base Palette - Raw color definitions */
+@import url('./palette.css');
+
+/* 2. Theme Layer - Choose ONE: light.css OR dark.css */
+@import url('./light.css');
+/* @import url('./dark.css'); */ /* Uncomment for dark theme */
+
+/* 3. Semantic Color Utilities */
+@import url('./colors.css');
+
+/* 4. Typography System */
+@import url('./typography.css');
+
+/* 5. Elevation (Shadows) */
+@import url('./elevation.css');
+
+/* 6. Motion (Animations) */
+@import url('./motion.css');
+
+/* 7. Shape (Border Radius) */
+@import url('./shape.css');
+
+/* 8. State (Interaction Layers) */
+@import url('./state.css');
+
+/**
+ * Optional: Add your custom overrides below
+ * 
+ * Example:
+ * :root {
+ *     --my-custom-token: value;
+ * }
+ */
