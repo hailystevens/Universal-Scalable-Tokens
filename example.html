@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Scalable Design Tokens - Example</title>
+    
+    <!-- Import all design tokens -->
+    <link rel="stylesheet" href="master.css">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--md-ref-typeface-plain);
+            background-color: var(--md-sys-color-background);
+            color: var(--md-sys-color-on-background);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px;
+        }
+        
+        .section {
+            margin-bottom: 48px;
+        }
+        
+        .section-title {
+            margin-bottom: 24px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--md-sys-color-outline);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .card {
+            padding: 16px;
+            transition: all var(--md-sys-motion-duration-200);
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .color-swatch {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+        
+        .typography-example {
+            margin: 16px 0;
+            padding: 12px;
+            background-color: var(--md-sys-color-surface);
+            border-radius: var(--md-sys-shape-corner-small-default-size);
+        }
+        
+        .button {
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all var(--md-sys-motion-duration-200);
+        }
+        
+        .button:hover {
+            transform: scale(1.02);
+        }
+        
+        .button:active {
+            transform: scale(0.98);
+        }
+        
+        .shape-demo {
+            width: 150px;
+            height: 100px;
+            background-color: var(--md-sys-color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--md-sys-color-on-primary);
+        }
+        
+        .elevation-demo {
+            width: 150px;
+            height: 100px;
+            background-color: var(--md-sys-color-surface);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        
+        .motion-demo {
+            width: 150px;
+            height: 60px;
+            background-color: var(--md-sys-color-secondary);
+            color: var(--md-sys-color-on-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition-property: transform;
+        }
+        
+        .motion-demo:hover {
+            transform: translateX(20px);
+        }
+        
+        .state-demo {
+            width: 150px;
+            height: 60px;
+            background-color: var(--md-sys-color-primary);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .state-demo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--md-sys-color-on-primary);
+            opacity: 0;
+            transition: opacity var(--md-sys-motion-duration-200);
+        }
+        
+        .state-demo:hover::before {
+            opacity: var(--md-sys-state-hover-state-layer-opacity);
+        }
+        
+        .state-demo:active::before {
+            opacity: var(--md-sys-state-pressed-state-layer-opacity);
+        }
+        
+        .state-demo span {
+            position: relative;
+            z-index: 1;
+            color: var(--md-sys-color-on-primary);
+        }
+        
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background-color: var(--md-sys-color-secondary);
+            color: var(--md-sys-color-on-secondary);
+            border: none;
+            border-radius: var(--md-sys-shape-corner-medium-default-size);
+            cursor: pointer;
+            font-weight: 500;
+            box-shadow: var(--md-sys-elevation-level2);
+            transition: all var(--md-sys-motion-duration-200);
+            z-index: 1000;
+        }
+        
+        .theme-toggle:hover {
+            box-shadow: var(--md-sys-elevation-level4);
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    
+    <div class="container">
+        <!-- Header -->
+        <header style="text-align: center; margin-bottom: 48px;">
+            <h1 class="display-large">Universal Scalable Design Tokens</h1>
+            <p class="body-large">A comprehensive demonstration of all design tokens</p>
+        </header>
+        
+        <!-- Colors Section -->
+        <section class="section">
+            <h2 class="section-title headline-medium">Colors</h2>
+            
+            <h3 class="title-medium">Primary Colors</h3>
+            <div class="grid">
+                <div class="card">
+                    <div class="color-swatch primary">
+                        <span class="label-large">Primary</span>
+                    </div>
+                    <p class="body-small">Primary brand color</p>
+                </div>
+                
+                <div class="card">
+                    <div class="color-swatch primary-container">
+                        <span class="label-large">Primary Container</span>
+                    </div>
+                    <p class="body-small">Primary container</p>
+                </div>
+            </div>
+            
+            <h3 class="title-medium">Secondary Colors</h3>
+            <div class="grid">
+                <div class="card">
+                    <div class="color-swatch secondary">
+                        <span class="label-large">Secondary</span>
+                    </div>
+                    <p class="body-small">Secondary color</p>
+                </div>
+                
+                <div class="card">
+                    <div class="color-swatch secondary-container">
+                        <span class="label-large">Secondary Container</span>
+                    </div>
+                    <p class="body-small">Secondary container</p>
+                </div>
+            </div>
+            
+            <h3 class="title-medium">Tertiary Colors</h3>
+            <div class="grid">
+                <div class="card">
+                    <div class="color-swatch tertiary">
+                        <span class="label-large">Tertiary</span>
+                    </div>
+                    <p class="body-small">Tertiary accent</p>
+                </div>
+                
+                <div class="card">
+                    <div class="color-swatch tertiary-container">
+                        <span class="label-large">Tertiary Container</span>
+                    </div>
+                    <p class="body-small">Tertiary container</p>
+                </div>
+            </div>
+            
+            <h3 class="title-medium">Semantic Colors</h3>
+            <div class="grid">
+                <div class="card">
+                    <div class="color-swatch error">
+                        <span class="label-large">Error</span>
+                    </div>
+                    <p class="body-small">Error state</p>
+                </div>
+                
+                <div class="card">
+                    <div class="color-swatch surface">
+                        <span class="label-large">Surface</span>
+                    </div>
+                    <p class="body-small">Surface layer</p>
+                </div>
+                
+                <div class="card">
+                    <div class="color-swatch background">
+                        <span class="label-large">Background</span>
+                    </div>
+                    <p class="body-small">Background layer</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Typography Section -->
+        <section class="section">
+            <h2 class="section-title headline-medium">Typography</h2>
+            
+            <h3 class="title-medium">Display Styles</h3>
+            <div class="typography-example">
+                <div class="display-large">Display Large - 57px</div>
+                <div class="display-medium">Display Medium - 45px</div>
+                <div class="display-small">Display Small - 36px</div>
+            </div>
+            
+            <h3 class="title-medium">Headline Styles</h3>
+            <div class="typography-example">
+                <div class="headline-large">Headline Large - 32px</div>
+                <div class="headline-medium">Headline Medium - 28px</div>
+                <div class="headline-small">Headline Small - 24px</div>
+            </div>
+            
+            <h3 class="title-medium">Title Styles</h3>
+            <div class="typography-example">
+                <div class="title-large">Title Large - 22px</div>
+                <div class="title-medium">Title Medium - 16px</div>
+                <div class="title-small">Title Small - 14px</div>
+            </div>
+            
+            <h3 class="title-medium">Body Styles</h3>
+            <div class="typography-example">
+                <div class="body-large">Body Large - 16px - Used for longer passages of text</div>
+                <div class="body-medium">Body Medium - 14px - Standard body text size</div>
+                <div class="body-small">Body Small - 12px - Smaller body text</div>
+            </div>
+            
+            <h3 class="title-medium">Label Styles</h3>
+            <div class="typography-example">
+                <span class="label-large">Label Large - 14px</span> |
+                <span class="label-medium">Label Medium - 12px</span> |
+                <span class="label-small">Label Small - 11px</span>
+            </div>
+        </section>
+        
+        <!-- Elevation Section -->
+        <section class="section">
+            <h2 class="section-title headline-medium">Elevation</h2>
+            <div class="grid">
+                <div>
+                    <div class="elevation-demo elevation-0">
+                        <span class="label-large">Level 0</span>
+                    </div>
+                    <p class="body-small">No elevation</p>
+                </div>
+                
+                <div>
+                    <div class="elevation-demo elevation-1">
+                        <span class="label-large">Level 1</span>
+                    </div>
+                    <p class="body-small">1px elevation</p>
+                </div>
+                
+                <div>
+                    <div class="elevation-demo elevation-2">
+                        <span class="label-large">Level 2</span>
+                    </div>
+                    <p class="body-small">3px elevation</p>
+                </div>
+                
+                <div>
+                    <div class="elevation-demo elevation-3">
+                        <span class="label-large">Level 3</span>
+                    </div>
+                    <p class="body-small">6px elevation</p>
+                </div>
+                
+                <div>
+                    <div class="elevation-demo elevation-4">
+                        <span class="label-large">Level 4</span>
+                    </div>
+                    <p class="body-small">8px elevation</p>
+                </div>
+                
+                <div>
+                    <div class="elevation-demo elevation-5">
+                        <span class="label-large">Level 5</span>
+                    </div>
+                    <p class="body-small">12px elevation</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Shape Section -->
+        <section class="section">
+            <h2 class="section-title headline-medium">Shape</h2>
+            <div class="grid">
+                <div>
+                    <div class="shape-demo shape-none">
+                        <span class="label-large">None</span>
+                    </div>
+                    <p class="body-small">0px radius</p>
+                </div>
+                
+                <div>
+                    <div class="shape-demo shape-extra-small">
+                        <span class="label-large">Extra Small</span>
+                    </div>
+                    <p class="body-small">4px radius</p>
+                </div>
+                
+                <div>
+                    <div class="shape-demo shape-small">
+                        <span class="label-large">Small</span>
+                    </div>
+                    <p class="body-small">8px radius</p>
+                </div>
+                
+                <div>
+                    <div class="shape-demo shape-medium">
+                        <span class="label-large">Medium</span>
+                    </div>
+                    <p class="body-small">12px radius</p>
+                </div>
+                
+                <div>
+                    <div class="shape-demo shape-large">
+                        <span class="label-large">Large</span>
+                    </div>
+                    <p class="body-small">16px radius</p>
+                </div>
+                
+                <div>
+                    <div class="shape-demo shape-extra-large">
+                        <span class="label-large">Extra Large</span>
+                    </div>
+                    <p class="body-small">28px radius</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Motion Section -->
+        <section class="section">
+            <h2 class="section-title headline-medium">Motion</h2>
+            <p class="body-medium" style="margin-bottom: 24px;">Hover over boxes to see transitions</p>
+            
+            <h3 class="title-medium">Duration Examples</h3>
+            <div class="grid">
+                <div>
+                    <div class="motion-demo duration-100 easing-standard shape-small">
+                        <span class="label-large">100ms</span>
+                    </div>
+                    <p class="body-small">Quick transition</p>
+                </div>
+                
+                <div>
+                    <div class="motion-demo duration-200 easing-standard shape-small">
+                        <span class="label-large">200ms</span>
+                    </div>
+                    <p class="body-small">Fast transition</p>
+                </div>
+                
+                <div>
+                    <div class="motion-demo duration-300 easing-standard shape-small">
+                        <span class="label-large">300ms</span>
+                    </div>
+                    <p class="body-small">Standard transition</p>
+                </div>
+                
+                <div>
+                    <div class="motion-demo duration-500 easing-standard shape-small">
+                        <span class="label-large">500ms</span>
+                    </div>
+                    <p class="body-small">Slow transition</p>
+                </div>
+            </div>
+            
+            <h3 class="title-medium">Easing Examples</h3>
+            <div class="grid">
+                <div>
+                    <div class="motion-demo duration-300 easing-linear shape-small">
+                        <span class="label-large">Linear</span>
+                    </div>
+                    <p class="body-small">Linear easing</p>
+                </div>
+                
+                <div>
+                    <div class="motion-demo duration-300 easing-standard shape-small">
+                        <span class="label-large">Standard</span>
+                    </div>
+                    <p class="body-small">Standard easing</p>
+                </div>
+                
+                <div>
+                    <div class="motion-demo duration-300 easing-emphasized shape-small">
+                        <span class="label-large">Emphasized</span>
+                    </div>
+                    <p class="body-small">Emphasized easing</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- State Section -->
+        <section class="section">
+            <h2 class="section-title headline-medium">State Layers</h2>
+            <p class="body-medium" style="margin-bottom: 24px;">Interact with elements to see state layers</p>
+            
+            <div class="grid">
+                <div>
+                    <div class="state-demo shape-small">
+                        <span>Hover Me</span>
+                    </div>
+                    <p class="body-small">Hover state layer</p>
+                </div>
+                
+                <div>
+                    <div class="state-demo shape-small">
+                        <span>Click Me</span>
+                    </div>
+                    <p class="body-small">Pressed state layer</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Button Examples Section -->
+        <section class="section">
+            <h2 class="section-title headline-medium">Component Examples</h2>
+            
+            <h3 class="title-medium">Buttons</h3>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px;">
+                <button class="button primary shape-medium elevation-1 label-large">
+                    Primary Button
+                </button>
+                
+                <button class="button secondary shape-medium elevation-1 label-large">
+                    Secondary Button
+                </button>
+                
+                <button class="button tertiary shape-medium elevation-1 label-large">
+                    Tertiary Button
+                </button>
+                
+                <button class="button error shape-medium elevation-1 label-large">
+                    Error Button
+                </button>
+            </div>
+            
+            <h3 class="title-medium">Cards</h3>
+            <div class="grid">
+                <article class="surface shape-large elevation-1" style="padding: 20px;">
+                    <h3 class="title-large" style="margin: 0 0 8px 0;">Card Title</h3>
+                    <p class="body-medium" style="margin: 0 0 12px 0;">
+                        This is a card component using surface color, large shape, and elevation 1.
+                    </p>
+                    <button class="button primary shape-small label-medium">
+                        Action
+                    </button>
+                </article>
+                
+                <article class="surface-variant shape-large elevation-2" style="padding: 20px;">
+                    <h3 class="title-large" style="margin: 0 0 8px 0;">Variant Card</h3>
+                    <p class="body-medium" style="margin: 0 0 12px 0;">
+                        This card uses surface variant color with elevation 2 for more emphasis.
+                    </p>
+                    <button class="button secondary shape-small label-medium">
+                        Learn More
+                    </button>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer style="text-align: center; margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--md-sys-color-outline);">
+            <p class="body-medium">
+                Universal Scalable Design Tokens - Customize all values in the CSS files to match your brand
+            </p>
+            <p class="body-small" style="opacity: 0.7;">
+                See README.md for detailed customization instructions
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        // Simple theme toggle functionality
+        function toggleTheme() {
+            // This is a simple demo. In production, you would:
+            // 1. Swap the light.css/dark.css link in the master.css
+            // 2. Store preference in localStorage
+            // 3. Load user preference on page load
+            
+            alert('To switch themes:\n\n1. Edit master.css\n2. Comment out light.css\n3. Uncomment dark.css\n\nFor dynamic switching, implement a proper theme system with JavaScript that swaps stylesheets.');
+        }
+    </script>
+</body>
+</html>
