@@ -36,6 +36,9 @@
 /* 8. State (Interaction Layers) */
 @import url('./state.css');
 
+/* 9. Components & Patterns */
+@import url('./components.css');
+
 /**
  * Optional: Add your custom overrides below
  * 

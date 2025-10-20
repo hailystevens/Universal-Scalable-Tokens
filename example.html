@@ -534,6 +534,101 @@
             </div>
         </section>
         
+        <!-- Component Library Preview -->
+        <section class="section">
+            <h2 class="section-title headline-medium">Component Library Preview</h2>
+
+            <div class="ust-stack" style="margin-bottom: 32px;">
+                <article class="ust-card">
+                    <header class="ust-card__header">
+                        <div>
+                            <h3 class="title-large">Team velocity</h3>
+                            <p class="body-medium">Last sprint performance across squads</p>
+                        </div>
+                        <button class="ust-btn ust-btn--surface">View report</button>
+                    </header>
+
+                    <div class="ust-dashboard-grid">
+                        <div class="ust-dashboard-widget">
+                            <span class="label-medium">Completed stories</span>
+                            <p class="display-small">42</p>
+                            <span class="ust-badge ust-badge--success">+12%</span>
+                        </div>
+                        <div class="ust-dashboard-widget">
+                            <span class="label-medium">Active blockers</span>
+                            <p class="display-small">5</p>
+                            <span class="ust-badge ust-badge--outline ust-badge--warning">Attention</span>
+                        </div>
+                    </div>
+
+                    <nav aria-label="Breadcrumb">
+                        <ol class="ust-breadcrumbs">
+                            <li class="ust-breadcrumbs__item"><a href="#">Home</a></li>
+                            <li class="ust-breadcrumbs__item"><a href="#">Insights</a></li>
+                            <li class="ust-breadcrumbs__item" aria-current="page">Team velocity</li>
+                        </ol>
+                    </nav>
+                </article>
+            </div>
+
+            <div class="ust-split-panel">
+                <form class="ust-form ust-form--columns" style="padding: 24px; border-radius: 16px; border: 1px solid var(--md-sys-color-outline);">
+                    <div class="ust-field">
+                        <label class="ust-field__label" for="project-name">Project name</label>
+                        <input class="ust-input" id="project-name" type="text" placeholder="Orbit redesign">
+                        <p class="ust-field__helper">Used for internal references.</p>
+                    </div>
+                    <div class="ust-field ust-field--error">
+                        <label class="ust-field__label" for="project-date">Due date</label>
+                        <input class="ust-input ust-input--error" id="project-date" type="date">
+                        <p class="ust-field__helper ust-field__helper--error">Select a date in the future.</p>
+                    </div>
+                    <div class="ust-field">
+                        <label class="ust-field__label" for="project-owner">Project owner</label>
+                        <select id="project-owner">
+                            <option>Amanda Simmons</option>
+                            <option>Chris Holt</option>
+                            <option>Jordan Blake</option>
+                        </select>
+                    </div>
+                    <div class="ust-field ust-field--inline">
+                        <span class="ust-field__label">Notifications</span>
+                        <label class="ust-field__label">
+                            <input type="checkbox" class="ust-checkbox ust-control" checked> Send weekly summary
+                        </label>
+                        <label class="ust-field__label">
+                            <input type="checkbox" class="ust-checkbox ust-control"> Include stakeholders
+                        </label>
+                    </div>
+                    <div class="ust-field__actions">
+                        <button type="reset" class="ust-btn ust-btn--ghost">Reset</button>
+                        <button type="submit" class="ust-btn ust-btn--primary">Save project</button>
+                    </div>
+                </form>
+
+                <aside class="ust-panel">
+                    <h3 class="title-medium">Activity</h3>
+                    <ul class="ust-content-list">
+                        <li class="ust-content-list__item">
+                            <span class="ust-inline-status"><span class="ust-status-dot ust-status-dot--success"></span>Autosave enabled</span>
+                        </li>
+                        <li class="ust-content-list__item">
+                            <span class="ust-inline-status"><span class="ust-status-dot ust-status-dot--warning"></span>2 pending approvals</span>
+                        </li>
+                        <li class="ust-content-list__item">
+                            <div class="ust-tabs">
+                                <div role="tablist" class="ust-tablist">
+                                    <button role="tab" class="ust-tab" aria-selected="true">Updates</button>
+                                    <button role="tab" class="ust-tab">Timeline</button>
+                                </div>
+                                <div role="tabpanel" class="ust-tabpanel">Latest summary sent 3 hours ago.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer style="text-align: center; margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--md-sys-color-outline);">
             <p class="body-medium">

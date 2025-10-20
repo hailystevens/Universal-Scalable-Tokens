@@ -32,6 +32,7 @@ This design token system provides a complete foundation for building consistent,
 - 🔄 **Description Agnostic**: Token names follow semantic conventions, not specific implementations
 - 🎯 **Material Design 3**: Based on Google's latest design system
 - 🌐 **Enterprise Ready**: Structured for large-scale applications
+- 🧩 **Component Library**: Drop-in UI primitives, patterns, and layouts built from the token system
 - ♿ **Accessible**: Built with accessibility best practices
 
 ## 🚀 Getting Started
@@ -77,6 +78,35 @@ This design token system provides a complete foundation for building consistent,
 </button>
 ```
 
+### Component Example
+
+```html
+<section class="ust-stack">
+  <header class="ust-hero">
+    <h1 class="ust-heading-3">Welcome back</h1>
+    <p class="ust-paragraph">Here is a snapshot of your product health.</p>
+    <div class="ust-cluster ust-cluster--spread">
+      <button class="ust-btn ust-btn--primary">Create report</button>
+      <button class="ust-btn ust-btn--ghost">Dismiss</button>
+    </div>
+  </header>
+
+  <div class="ust-dashboard-grid">
+    <article class="ust-dashboard-widget">
+      <h2 class="title-medium">Active users</h2>
+      <p class="display-small">12,480</p>
+      <span class="ust-badge ust-badge--success">+8% WoW</span>
+    </article>
+
+    <article class="ust-dashboard-widget">
+      <h2 class="title-medium">Onboarding completion</h2>
+      <progress class="ust-progress" value="72" max="100"></progress>
+      <span class="ust-inline-status"><span class="ust-status-dot ust-status-dot--success"></span>72% finished</span>
+    </article>
+  </div>
+</section>
+```
+
 ## 📁 File Structure
 
 ```
@@ -91,6 +121,7 @@ Universal-Scalable-Tokens/
 ├── motion.css          # Animation durations and easing
 ├── shape.css           # Border radius values
 ├── state.css           # Interaction state opacities
+├── components.css      # Prebuilt primitives, components, and patterns
 ├── example.html        # Live demonstration
 └── README.md           # This file
 ```
@@ -359,6 +390,20 @@ Edit **motion.css** to adjust animation timing:
 - **Medium**: 12px
 - **Large**: 16px
 - **Extra Large**: 28px
+
+## 🧱 Component Library Overview
+
+`components.css` composes the design tokens into ready-to-use patterns that cover entire application flows. The library is grouped into seven families so you can mix and match what you need:
+
+1. **Base elements** – typographic helpers, buttons, inputs, lists, tables, badges, tooltips, avatars, progress indicators, and utilities such as `ust-stack`, `ust-cluster`, and `ust-divider`.
+2. **Composite components** – cards, panels, tabs, accordions, menus, alerts/toasts, breadcrumbs, pagination, steppers, search bars, pickers, upload zones, ratings, navigation shells, empty states, and more.
+3. **Form patterns** – grid and inline form layouts, reusable `ust-field` wrappers, inline editing, and autosave/confirmation affordances.
+4. **Feedback patterns** – popovers, snackbars, banners, status messages, and loading overlays.
+5. **Layout primitives** – responsive containers, grids, masonry clusters, split panes, app shells, hero blocks, and content lists.
+6. **Complex templates** – search & filter panels, dashboard widgets, rich data tables, authentication cards, settings panels, comment threads, chat bubbles, file viewers, workflow trackers, and onboarding tours.
+7. **System-level components** – theme toggles, language switchers, skip links, command palettes, notification centers, user menus, help widgets, and keyboard shortcut legends.
+
+Each component is theme aware, keyboard navigable, and built with token-driven spacing, shape, and color so it snaps to your brand automatically.
 
 ## 📚 Best Practices
 
