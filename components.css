@@ -1,10 +1,26 @@
 /**
  * Universal Scalable Design Tokens - Component & Pattern Library
  *
- * This stylesheet composes the design tokens into ready-to-use UI primitives,
- * composite components, layout helpers, and application patterns. It is
- * intended to be "the only CSS you'll ever need" for rapidly assembling
- * accessible, theme-aware interfaces without rewriting base styles.
+ * GitHub-inspired UI component library built on design tokens.
+ * Features clean, accessible components with subtle styling that matches
+ * GitHub's professional aesthetic.
+ *
+ * DESIGN PRINCIPLES:
+ * - Subtle borders (1px) instead of heavy shadows
+ * - 6px default border radius for modern, clean look
+ * - Neutral gray palette with blue accents
+ * - Minimal hover effects (brightness filters, not transforms)
+ * - Accessible contrast ratios throughout
+ * - System font stack for native performance
+ *
+ * COMPONENT FAMILIES:
+ * 1. Base Elements - Buttons, inputs, typography, badges
+ * 2. Composite Components - Cards, panels, tabs, menus
+ * 3. Forms & Data Entry - Field wrappers, validation states
+ * 4. Feedback Patterns - Alerts, toasts, progress indicators
+ * 5. Layout Primitives - Grids, containers, spacing utilities
+ * 6. Complex Templates - Dashboards, tables, navigation
+ * 7. System Components - Theme toggles, accessibility helpers
  */
 
 /* -------------------------------------------------------------------------- */
@@ -807,11 +823,12 @@ input[type="range"]::-moz-range-thumb {
 progress,
 .ust-progress {
     inline-size: 100%;
-    block-size: 0.75rem;
-    border-radius: var(--ust-radius-pill);
-    background-color: color-mix(in srgb, var(--ust-color-surface-variant) 80%, transparent);
+    block-size: 8px;
+    border-radius: var(--ust-radius-md);
+    background-color: color-mix(in srgb, var(--ust-color-outline) 15%, var(--ust-color-surface));
     overflow: hidden;
     appearance: none;
+    border: 0;
 }
 
 progress::-webkit-progress-bar {
@@ -828,11 +845,16 @@ progress::-moz-progress-bar {
     border-radius: inherit;
 }
 
+.ust-progress--accent::-webkit-progress-value,
+.ust-progress--accent::-moz-progress-bar {
+    background-color: var(--ust-color-accent);
+}
+
 meter {
     inline-size: 100%;
-    block-size: 0.75rem;
-    border-radius: var(--ust-radius-pill);
-    background: color-mix(in srgb, var(--ust-color-surface-variant) 80%, transparent);
+    block-size: 8px;
+    border-radius: var(--ust-radius-md);
+    background: color-mix(in srgb, var(--ust-color-outline) 15%, var(--ust-color-surface));
 }
 
 meter::-webkit-meter-bar {
@@ -841,11 +863,11 @@ meter::-webkit-meter-bar {
 }
 
 meter::-webkit-meter-optimum-value {
-    background: var(--ust-color-secondary);
+    background: var(--md-sys-color-tertiary);
 }
 
 meter::-webkit-meter-suboptimum-value {
-    background: color-mix(in srgb, var(--ust-color-secondary) 50%, var(--ust-color-destructive) 50%);
+    background: #bf8700;
 }
 
 meter::-webkit-meter-even-less-good-value {
@@ -1874,11 +1896,12 @@ details.ust-accordion[open] {
 
 .ust-grid {
     display: grid;
-    gap: var(--ust-space-lg);
+    gap: var(--ust-space-md);
+    grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
 }
 
 .ust-grid--responsive {
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
 }
 
 .ust-grid--masonry {
@@ -1938,10 +1961,9 @@ details.ust-accordion[open] {
     display: grid;
     gap: var(--ust-space-lg);
     padding: var(--ust-space-2xl) clamp(var(--ust-space-md), 6vw, var(--ust-space-2xl));
-    background: linear-gradient(135deg,
-            color-mix(in srgb, var(--ust-color-accent) 18%, transparent) 0%,
-            color-mix(in srgb, var(--ust-color-secondary) 22%, transparent) 100%);
-    border-radius: var(--ust-radius-lg);
+    background: color-mix(in srgb, var(--ust-color-outline) 3%, var(--ust-color-surface));
+    border: 1px solid var(--ust-color-outline);
+    border-radius: var(--ust-radius-md);
     color: var(--ust-color-text-strong);
 }
 
