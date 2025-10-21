@@ -32,7 +32,18 @@ This design token system provides a complete foundation for building consistent,
 - 🔄 **Description Agnostic**: Token names follow semantic conventions, not specific implementations
 - 🎯 **Material Design 3**: Based on Google's latest design system
 - 🌐 **Enterprise Ready**: Structured for large-scale applications
+- 🧩 **Component Library**: Drop-in UI primitives, patterns, and layouts built from the token system
 - ♿ **Accessible**: Built with accessibility best practices
+- 🎯 **WCAG 2 Palette**: Ships with high-contrast blues and a vivid accent tuned for readability
+- 🧱 **Responsive Grid**: Auto-fit layout utilities that shrink and expand with the viewport
+
+### Default Theme at a Glance
+
+- **Primary brand blue** `#0033A1` and **deep navy** `#0A2240` create readable base surfaces.
+- **Accent orange** `#F37121` is available for calls to action, indicators, and highlight treatments.
+- **Semantic feedback** colours stick to the classics: success `#1E7A3D`, warning `#B85C00`, and error `#BA1A1A`.
+- **Responsive layout primitives** (`.ust-container--grid`, `.ust-grid`, `.ust-sidebar-layout`) auto-fit cards, tables, and panels in CMS dashboards.
+- **Data presentation essentials**—tables, lists, dropdowns, file viewers—arrive pre-styled for consistent admin experiences.
 
 ## 🚀 Getting Started
 
@@ -77,6 +88,33 @@ This design token system provides a complete foundation for building consistent,
 </button>
 ```
 
+### Component Example
+
+```html
+<section class="ust-container ust-container--grid">
+  <header class="ust-hero">
+    <h1 class="ust-heading-3">Welcome back</h1>
+    <p class="ust-paragraph">Here is a snapshot of your product health.</p>
+    <div class="ust-cluster ust-cluster--spread">
+      <button class="ust-btn ust-btn--primary">Create report</button>
+      <button class="ust-btn ust-btn--accent">Launch campaign</button>
+    </div>
+  </header>
+
+  <article class="ust-card">
+    <h2 class="title-medium">Active users</h2>
+    <p class="display-small">12,480</p>
+    <span class="ust-badge ust-badge--success">+8% WoW</span>
+  </article>
+
+  <article class="ust-card">
+    <h2 class="title-medium">Onboarding completion</h2>
+    <progress class="ust-progress ust-progress--accent" value="72" max="100"></progress>
+    <span class="ust-inline-status"><span class="ust-status-dot ust-status-dot--success"></span>72% finished</span>
+  </article>
+</section>
+```
+
 ## 📁 File Structure
 
 ```
@@ -91,6 +129,7 @@ Universal-Scalable-Tokens/
 ├── motion.css          # Animation durations and easing
 ├── shape.css           # Border radius values
 ├── state.css           # Interaction state opacities
+├── components.css      # Prebuilt primitives, components, and patterns
 ├── example.html        # Live demonstration
 └── README.md           # This file
 ```
@@ -107,16 +146,19 @@ This is where you define your **raw color values**. Replace these with your bran
 ```css
 :root {
     /* Primary color palette - CUSTOMIZE THESE */
-    --md-ref-palette-primary40: #6750a4ff;   /* Your primary brand color */
-    --md-ref-palette-primary80: #d0bcffff;   /* Lighter variant */
-    
+    --md-ref-palette-primary40: #0033a1;   /* Core brand blue */
+    --md-ref-palette-primary80: #7998ff;   /* Lighter variant */
+
     /* Secondary color palette - CUSTOMIZE THESE */
-    --md-ref-palette-secondary40: #625b71ff; /* Your secondary color */
-    --md-ref-palette-secondary80: #ccc2dcff; /* Lighter variant */
-    
+    --md-ref-palette-secondary40: #0a2240; /* Deep navy support */
+    --md-ref-palette-secondary80: #56759f; /* Lighter variant */
+
+    /* Accent palette - CUSTOMIZE THESE */
+    --md-ref-palette-tertiary60: #f37121;  /* High-impact accent */
+    --md-ref-palette-tertiary90: #ffd9bf;  /* Soft accent background */
+
     /* Error color palette - CUSTOMIZE THESE */
-    --md-ref-palette-error40: #b3261eff;     /* Your error color */
-    /* ... more palette values ... */
+    --md-ref-palette-error40: #ba1a1a;     /* Accessible red */
 }
 ```
 
@@ -359,6 +401,20 @@ Edit **motion.css** to adjust animation timing:
 - **Medium**: 12px
 - **Large**: 16px
 - **Extra Large**: 28px
+
+## 🧱 Component Library Overview
+
+`components.css` composes the design tokens into ready-to-use patterns that cover entire application flows. The library is grouped into seven families so you can mix and match what you need:
+
+1. **Base elements** – typographic helpers, buttons, inputs, lists, tables, badges, tooltips, avatars, progress indicators, and utilities such as `ust-stack`, `ust-cluster`, and `ust-divider`.
+2. **Composite components** – cards, panels, tabs, accordions, menus, alerts/toasts, breadcrumbs, pagination, steppers, search bars, pickers, upload zones, ratings, navigation shells, empty states, and more.
+3. **Form patterns** – grid and inline form layouts, reusable `ust-field` wrappers, inline editing, and autosave/confirmation affordances.
+4. **Feedback patterns** – popovers, snackbars, banners, status messages, and loading overlays.
+5. **Layout primitives** – responsive containers, grids, masonry clusters, split panes, app shells, hero blocks, and content lists.
+6. **Complex templates** – search & filter panels, dashboard widgets, rich data tables, authentication cards, settings panels, comment threads, chat bubbles, file viewers, workflow trackers, and onboarding tours.
+7. **System-level components** – theme toggles, language switchers, skip links, command palettes, notification centers, user menus, help widgets, and keyboard shortcut legends.
+
+Each component is theme aware, keyboard navigable, and built with token-driven spacing, shape, and color so it snaps to your brand automatically.
 
 ## 📚 Best Practices
 
