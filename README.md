@@ -34,6 +34,16 @@ This design token system provides a complete foundation for building consistent,
 - 🌐 **Enterprise Ready**: Structured for large-scale applications
 - 🧩 **Component Library**: Drop-in UI primitives, patterns, and layouts built from the token system
 - ♿ **Accessible**: Built with accessibility best practices
+- 🎯 **WCAG 2 Palette**: Ships with high-contrast blues and a vivid accent tuned for readability
+- 🧱 **Responsive Grid**: Auto-fit layout utilities that shrink and expand with the viewport
+
+### Default Theme at a Glance
+
+- **Primary brand blue** `#0033A1` and **deep navy** `#0A2240` create readable base surfaces.
+- **Accent orange** `#F37121` is available for calls to action, indicators, and highlight treatments.
+- **Semantic feedback** colours stick to the classics: success `#1E7A3D`, warning `#B85C00`, and error `#BA1A1A`.
+- **Responsive layout primitives** (`.ust-container--grid`, `.ust-grid`, `.ust-sidebar-layout`) auto-fit cards, tables, and panels in CMS dashboards.
+- **Data presentation essentials**—tables, lists, dropdowns, file viewers—arrive pre-styled for consistent admin experiences.
 
 ## 🚀 Getting Started
 
@@ -138,16 +148,19 @@ This is where you define your **raw color values**. Replace these with your bran
 ```css
 :root {
     /* Primary color palette - CUSTOMIZE THESE */
-    --md-ref-palette-primary40: #6750a4ff;   /* Your primary brand color */
-    --md-ref-palette-primary80: #d0bcffff;   /* Lighter variant */
-    
+    --md-ref-palette-primary40: #0033a1;   /* Core brand blue */
+    --md-ref-palette-primary80: #7998ff;   /* Lighter variant */
+
     /* Secondary color palette - CUSTOMIZE THESE */
-    --md-ref-palette-secondary40: #625b71ff; /* Your secondary color */
-    --md-ref-palette-secondary80: #ccc2dcff; /* Lighter variant */
-    
+    --md-ref-palette-secondary40: #0a2240; /* Deep navy support */
+    --md-ref-palette-secondary80: #56759f; /* Lighter variant */
+
+    /* Accent palette - CUSTOMIZE THESE */
+    --md-ref-palette-tertiary60: #f37121;  /* High-impact accent */
+    --md-ref-palette-tertiary90: #ffd9bf;  /* Soft accent background */
+
     /* Error color palette - CUSTOMIZE THESE */
-    --md-ref-palette-error40: #b3261eff;     /* Your error color */
-    /* ... more palette values ... */
+    --md-ref-palette-error40: #ba1a1a;     /* Accessible red */
 }
 ```
 

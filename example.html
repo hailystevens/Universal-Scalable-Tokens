@@ -3,486 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universal Scalable Design Tokens - Example</title>
-    
-    <!-- Import all design tokens -->
+    <title>Universal Scalable Tokens – Responsive Theme Preview</title>
     <link rel="stylesheet" href="master.css">
-    
     <style>
-        * {
-            box-sizing: border-box;
+        :root {
+            color-scheme: light;
         }
-        
+
         body {
             margin: 0;
-            padding: 0;
-            font-family: var(--md-ref-typeface-plain);
-            background-color: var(--md-sys-color-background);
-            color: var(--md-sys-color-on-background);
+            font-family: var(--ust-font-family-base);
+            background: var(--md-sys-color-background);
+            color: var(--ust-color-text);
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 32px;
-        }
-        
-        .section {
-            margin-bottom: 48px;
-        }
-        
-        .section-title {
-            margin-bottom: 24px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--md-sys-color-outline);
-        }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-        
-        .card {
-            padding: 16px;
-            transition: all var(--md-sys-motion-duration-200);
-        }
-        
-        .card:hover {
-            transform: translateY(-2px);
-        }
-        
-        .color-swatch {
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 8px;
-        }
-        
-        .typography-example {
-            margin: 16px 0;
-            padding: 12px;
-            background-color: var(--md-sys-color-surface);
-            border-radius: var(--md-sys-shape-corner-small-default-size);
-        }
-        
-        .button {
-            padding: 12px 24px;
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-            transition: all var(--md-sys-motion-duration-200);
-        }
-        
-        .button:hover {
-            transform: scale(1.02);
-        }
-        
-        .button:active {
-            transform: scale(0.98);
-        }
-        
-        .shape-demo {
-            width: 150px;
-            height: 100px;
-            background-color: var(--md-sys-color-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--md-sys-color-on-primary);
-        }
-        
-        .elevation-demo {
-            width: 150px;
-            height: 100px;
-            background-color: var(--md-sys-color-surface);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-        }
-        
-        .motion-demo {
-            width: 150px;
-            height: 60px;
-            background-color: var(--md-sys-color-secondary);
-            color: var(--md-sys-color-on-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition-property: transform;
-        }
-        
-        .motion-demo:hover {
-            transform: translateX(20px);
-        }
-        
-        .state-demo {
-            width: 150px;
-            height: 60px;
-            background-color: var(--md-sys-color-primary);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-        
-        .state-demo::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--md-sys-color-on-primary);
-            opacity: 0;
-            transition: opacity var(--md-sys-motion-duration-200);
-        }
-        
-        .state-demo:hover::before {
-            opacity: var(--md-sys-state-hover-state-layer-opacity);
-        }
-        
-        .state-demo:active::before {
-            opacity: var(--md-sys-state-pressed-state-layer-opacity);
-        }
-        
-        .state-demo span {
-            position: relative;
-            z-index: 1;
-            color: var(--md-sys-color-on-primary);
-        }
-        
+
         .theme-toggle {
             position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 12px 24px;
-            background-color: var(--md-sys-color-secondary);
-            color: var(--md-sys-color-on-secondary);
+            inset-block-start: var(--ust-space-lg);
+            inset-inline-end: var(--ust-space-lg);
+            z-index: 10;
+            padding: var(--ust-space-sm) var(--ust-space-lg);
+            border-radius: var(--ust-radius-pill);
+            background: var(--ust-color-secondary);
+            color: var(--ust-color-secondary-contrast);
             border: none;
-            border-radius: var(--md-sys-shape-corner-medium-default-size);
+            box-shadow: var(--ust-shadow-raised);
             cursor: pointer;
-            font-weight: 500;
-            box-shadow: var(--md-sys-elevation-level2);
-            transition: all var(--md-sys-motion-duration-200);
-            z-index: 1000;
         }
-        
-        .theme-toggle:hover {
-            box-shadow: var(--md-sys-elevation-level4);
+
+        .demo-page {
+            gap: var(--ust-grid-gap);
+            padding-block-end: var(--ust-space-2xl);
+        }
+
+        .demo-span-full {
+            grid-column: 1 / -1;
+        }
+
+        .demo-swatches {
+            display: grid;
+            gap: var(--ust-space-md);
+            grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+        }
+
+        .demo-swatch {
+            border-radius: var(--ust-radius-lg);
+            padding: var(--ust-space-lg);
+            display: grid;
+            gap: var(--ust-space-xs);
+        }
+
+        .demo-swatch span {
+            font-weight: 600;
+        }
+
+        .demo-table-wrapper {
+            overflow-x: auto;
+        }
+
+        .demo-form-grid {
+            display: grid;
+            gap: var(--ust-space-md);
+        }
+
+        .demo-file-grid {
+            display: grid;
+            gap: var(--ust-space-md);
+        }
+
+        .demo-list {
+            margin: 0;
+            padding: 0;
+        }
+
+        .demo-inline {
+            display: flex;
+            gap: var(--ust-space-sm);
+            flex-wrap: wrap;
+        }
+
+        .demo-section-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--ust-space-md);
         }
     </style>
 </head>
 <body>
     <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
-    
-    <div class="container">
-        <!-- Header -->
-        <header style="text-align: center; margin-bottom: 48px;">
-            <h1 class="display-large">Universal Scalable Design Tokens</h1>
-            <p class="body-large">A comprehensive demonstration of all design tokens</p>
+
+    <main class="ust-container ust-container--grid demo-page">
+        <header class="ust-hero demo-span-full">
+            <div class="ust-stack">
+                <span class="ust-badge ust-badge--accent">CMS ready</span>
+                <h1 class="ust-heading-3">Universal Scalable Tokens</h1>
+                <p class="ust-paragraph">WCAG-friendly blues, responsive grids, and drop-in UI primitives built to power content-heavy dashboards.</p>
+                <div class="ust-cluster ust-cluster--spread">
+                    <button class="ust-btn ust-btn--primary">Create entry</button>
+                    <button class="ust-btn ust-btn--accent">Review campaign</button>
+                </div>
+            </div>
+            <div class="ust-stack">
+                <div class="ust-inline-status">
+                    <span class="ust-status-dot ust-status-dot--success"></span>
+                    Blue/orange palette passes WCAG 2 AA for large text.
+                </div>
+                <div class="ust-inline-status">
+                    <span class="ust-status-dot ust-status-dot--warning"></span>
+                    Swap palettes in <code>palette.css</code> to match your brand.
+                </div>
+            </div>
         </header>
-        
-        <!-- Colors Section -->
-        <section class="section">
-            <h2 class="section-title headline-medium">Colors</h2>
-            
-            <h3 class="title-medium">Primary Colors</h3>
-            <div class="grid">
-                <div class="card">
-                    <div class="color-swatch primary">
-                        <span class="label-large">Primary</span>
-                    </div>
-                    <p class="body-small">Primary brand color</p>
-                </div>
-                
-                <div class="card">
-                    <div class="color-swatch primary-container">
-                        <span class="label-large">Primary Container</span>
-                    </div>
-                    <p class="body-small">Primary container</p>
-                </div>
+
+        <section class="ust-card demo-span-full">
+            <div class="demo-section-title">
+                <h2 class="title-medium">Theme colours</h2>
+                <span class="ust-badge ust-badge--accent">#0033A1 · #0A2240 · #F37121</span>
             </div>
-            
-            <h3 class="title-medium">Secondary Colors</h3>
-            <div class="grid">
-                <div class="card">
-                    <div class="color-swatch secondary">
-                        <span class="label-large">Secondary</span>
-                    </div>
-                    <p class="body-small">Secondary color</p>
+            <div class="demo-swatches">
+                <div class="demo-swatch primary">
+                    <span class="label-large">Primary</span>
+                    <p class="body-small">Brand blue for primary actions.</p>
                 </div>
-                
-                <div class="card">
-                    <div class="color-swatch secondary-container">
-                        <span class="label-large">Secondary Container</span>
-                    </div>
-                    <p class="body-small">Secondary container</p>
+                <div class="demo-swatch primary-container">
+                    <span class="label-large">Primary container</span>
+                    <p class="body-small">Supporting surfaces for cards.</p>
                 </div>
-            </div>
-            
-            <h3 class="title-medium">Tertiary Colors</h3>
-            <div class="grid">
-                <div class="card">
-                    <div class="color-swatch tertiary">
-                        <span class="label-large">Tertiary</span>
-                    </div>
-                    <p class="body-small">Tertiary accent</p>
+                <div class="demo-swatch secondary">
+                    <span class="label-large">Secondary</span>
+                    <p class="body-small">Deep navy for backgrounds.</p>
                 </div>
-                
-                <div class="card">
-                    <div class="color-swatch tertiary-container">
-                        <span class="label-large">Tertiary Container</span>
-                    </div>
-                    <p class="body-small">Tertiary container</p>
+                <div class="demo-swatch tertiary">
+                    <span class="label-large">Accent</span>
+                    <p class="body-small">High-impact CTA orange.</p>
                 </div>
-            </div>
-            
-            <h3 class="title-medium">Semantic Colors</h3>
-            <div class="grid">
-                <div class="card">
-                    <div class="color-swatch error">
-                        <span class="label-large">Error</span>
-                    </div>
-                    <p class="body-small">Error state</p>
+                <div class="demo-swatch error">
+                    <span class="label-large">Error</span>
+                    <p class="body-small">Retains accessible red.</p>
                 </div>
-                
-                <div class="card">
-                    <div class="color-swatch surface">
-                        <span class="label-large">Surface</span>
-                    </div>
-                    <p class="body-small">Surface layer</p>
-                </div>
-                
-                <div class="card">
-                    <div class="color-swatch background">
-                        <span class="label-large">Background</span>
-                    </div>
-                    <p class="body-small">Background layer</p>
+                <div class="demo-swatch surface">
+                    <span class="label-large">Surface</span>
+                    <p class="body-small">Default panel canvas.</p>
                 </div>
             </div>
         </section>
-        
-        <!-- Typography Section -->
-        <section class="section">
-            <h2 class="section-title headline-medium">Typography</h2>
-            
-            <h3 class="title-medium">Display Styles</h3>
-            <div class="typography-example">
-                <div class="display-large">Display Large - 57px</div>
-                <div class="display-medium">Display Medium - 45px</div>
-                <div class="display-small">Display Small - 36px</div>
-            </div>
-            
-            <h3 class="title-medium">Headline Styles</h3>
-            <div class="typography-example">
-                <div class="headline-large">Headline Large - 32px</div>
-                <div class="headline-medium">Headline Medium - 28px</div>
-                <div class="headline-small">Headline Small - 24px</div>
-            </div>
-            
-            <h3 class="title-medium">Title Styles</h3>
-            <div class="typography-example">
-                <div class="title-large">Title Large - 22px</div>
-                <div class="title-medium">Title Medium - 16px</div>
-                <div class="title-small">Title Small - 14px</div>
-            </div>
-            
-            <h3 class="title-medium">Body Styles</h3>
-            <div class="typography-example">
-                <div class="body-large">Body Large - 16px - Used for longer passages of text</div>
-                <div class="body-medium">Body Medium - 14px - Standard body text size</div>
-                <div class="body-small">Body Small - 12px - Smaller body text</div>
-            </div>
-            
-            <h3 class="title-medium">Label Styles</h3>
-            <div class="typography-example">
-                <span class="label-large">Label Large - 14px</span> |
-                <span class="label-medium">Label Medium - 12px</span> |
-                <span class="label-small">Label Small - 11px</span>
+
+        <section class="ust-card">
+            <h2 class="title-medium">Responsive grid preview</h2>
+            <p class="body-small">Cards shrink and expand automatically using <code>.ust-grid</code> and <code>--ust-grid-column-min</code>.</p>
+            <div class="ust-grid">
+                <article class="ust-card">
+                    <h3 class="title-small">Content audit</h3>
+                    <p class="body-medium">19 landing pages awaiting review.</p>
+                    <div class="demo-inline">
+                        <span class="ust-chip ust-chip--accent">Marketing</span>
+                        <span class="ust-chip ust-chip--success">Ready</span>
+                    </div>
+                </article>
+                <article class="ust-card">
+                    <h3 class="title-small">Media library</h3>
+                    <p class="body-medium">324 assets · 12 pending approvals.</p>
+                    <button class="ust-btn ust-btn--accent ust-btn--block">Upload asset</button>
+                </article>
+                <article class="ust-card">
+                    <h3 class="title-small">Engagement</h3>
+                    <progress class="ust-progress ust-progress--accent" value="68" max="100"></progress>
+                    <span class="ust-inline-status"><span class="ust-status-dot ust-status-dot--success"></span>+6% this week</span>
+                </article>
             </div>
         </section>
-        
-        <!-- Elevation Section -->
-        <section class="section">
-            <h2 class="section-title headline-medium">Elevation</h2>
-            <div class="grid">
-                <div>
-                    <div class="elevation-demo elevation-0">
-                        <span class="label-large">Level 0</span>
-                    </div>
-                    <p class="body-small">No elevation</p>
+
+        <section class="ust-card">
+            <h2 class="title-medium">Forms &amp; controls</h2>
+            <form class="demo-form-grid">
+                <label class="ust-field">
+                    <span class="ust-field__label">Title</span>
+                    <input class="ust-input" type="text" placeholder="Hero banner update">
+                </label>
+                <label class="ust-field ust-field--error">
+                    <span class="ust-field__label">URL slug</span>
+                    <input class="ust-input ust-input--error" type="text" value="summer-sale-2025">
+                    <span class="ust-field__helper ust-field__helper--error">Slug already in use.</span>
+                </label>
+                <label class="ust-field">
+                    <span class="ust-field__label">Content owner</span>
+                    <select class="ust-input">
+                        <option>Marketing</option>
+                        <option>Product</option>
+                        <option>Support</option>
+                    </select>
+                </label>
+                <label class="ust-field">
+                    <span class="ust-field__label">Campaign window</span>
+                    <input class="ust-input" type="date">
+                </label>
+                <label class="ust-field">
+                    <span class="ust-field__label">Summary</span>
+                    <textarea class="ust-input" rows="3" placeholder="Outline the hero messaging..."></textarea>
+                </label>
+                <div class="demo-inline">
+                    <label class="ust-field">
+                        <input class="ust-checkbox" type="checkbox" checked>
+                        <span>Publish immediately</span>
+                    </label>
+                    <label class="ust-field">
+                        <input class="ust-radio" type="radio" name="abtest" checked>
+                        <span>Variant A</span>
+                    </label>
+                    <label class="ust-field">
+                        <input class="ust-radio" type="radio" name="abtest">
+                        <span>Variant B</span>
+                    </label>
                 </div>
-                
-                <div>
-                    <div class="elevation-demo elevation-1">
-                        <span class="label-large">Level 1</span>
+                <div class="ust-cluster ust-cluster--spread">
+                    <button type="button" class="ust-btn ust-btn--ghost">Save draft</button>
+                    <div class="demo-inline">
+                        <button type="button" class="ust-btn ust-btn--secondary">Preview</button>
+                        <button type="submit" class="ust-btn ust-btn--primary">Publish</button>
                     </div>
-                    <p class="body-small">1px elevation</p>
                 </div>
-                
-                <div>
-                    <div class="elevation-demo elevation-2">
-                        <span class="label-large">Level 2</span>
-                    </div>
-                    <p class="body-small">3px elevation</p>
-                </div>
-                
-                <div>
-                    <div class="elevation-demo elevation-3">
-                        <span class="label-large">Level 3</span>
-                    </div>
-                    <p class="body-small">6px elevation</p>
-                </div>
-                
-                <div>
-                    <div class="elevation-demo elevation-4">
-                        <span class="label-large">Level 4</span>
-                    </div>
-                    <p class="body-small">8px elevation</p>
-                </div>
-                
-                <div>
-                    <div class="elevation-demo elevation-5">
-                        <span class="label-large">Level 5</span>
-                    </div>
-                    <p class="body-small">12px elevation</p>
-                </div>
+            </form>
+        </section>
+
+        <section class="ust-card demo-span-full">
+            <h2 class="title-medium">Data display</h2>
+            <div class="demo-table-wrapper">
+                <table class="ust-table">
+                    <caption>Upcoming content releases</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Page</th>
+                            <th scope="col">Owner</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Launch</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Summer sale hub</td>
+                            <td>Marketing</td>
+                            <td><span class="ust-badge ust-badge--success">Approved</span></td>
+                            <td>Jul 12</td>
+                        </tr>
+                        <tr>
+                            <td>Pricing refresh</td>
+                            <td>Product</td>
+                            <td><span class="ust-badge ust-badge--warning">Needs edit</span></td>
+                            <td>Jul 19</td>
+                        </tr>
+                        <tr>
+                            <td>Support tutorials</td>
+                            <td>Support</td>
+                            <td><span class="ust-badge">In review</span></td>
+                            <td>Jul 28</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
-        
-        <!-- Shape Section -->
-        <section class="section">
-            <h2 class="section-title headline-medium">Shape</h2>
-            <div class="grid">
-                <div>
-                    <div class="shape-demo shape-none">
-                        <span class="label-large">None</span>
+
+        <section class="ust-card">
+            <h2 class="title-medium">Lists &amp; context</h2>
+            <ul class="ust-content-list demo-list">
+                <li class="ust-content-list__item">
+                    <span class="ust-content-list__title">SEO review</span>
+                    <span class="ust-content-list__meta">Updated 3 hours ago · <strong>High priority</strong></span>
+                </li>
+                <li class="ust-content-list__item">
+                    <span class="ust-content-list__title">Legal approval</span>
+                    <span class="ust-content-list__meta">Pending signature · Due Jul 15</span>
+                </li>
+                <li class="ust-content-list__item">
+                    <span class="ust-content-list__title">Accessibility audit</span>
+                    <span class="ust-content-list__meta">WCAG 2.2 checklist complete</span>
+                </li>
+            </ul>
+            <div class="ust-divider ust-divider--accent"></div>
+            <div class="demo-file-grid">
+                <div class="ust-file-viewer">
+                    <div class="demo-inline">
+                        <span class="ust-chip ust-chip--accent">Asset</span>
+                        <span class="ust-badge ust-badge--solid">Hero</span>
                     </div>
-                    <p class="body-small">0px radius</p>
-                </div>
-                
-                <div>
-                    <div class="shape-demo shape-extra-small">
-                        <span class="label-large">Extra Small</span>
+                    <h3 class="title-small">summer-hero.jpg</h3>
+                    <p class="body-small">3840×2160 · 1.2 MB · Uploaded by Taylor on Jul 7</p>
+                    <div class="demo-inline">
+                        <button class="ust-btn ust-btn--accent">Download</button>
+                        <button class="ust-btn ust-btn--ghost">Replace</button>
                     </div>
-                    <p class="body-small">4px radius</p>
-                </div>
-                
-                <div>
-                    <div class="shape-demo shape-small">
-                        <span class="label-large">Small</span>
-                    </div>
-                    <p class="body-small">8px radius</p>
-                </div>
-                
-                <div>
-                    <div class="shape-demo shape-medium">
-                        <span class="label-large">Medium</span>
-                    </div>
-                    <p class="body-small">12px radius</p>
-                </div>
-                
-                <div>
-                    <div class="shape-demo shape-large">
-                        <span class="label-large">Large</span>
-                    </div>
-                    <p class="body-small">16px radius</p>
-                </div>
-                
-                <div>
-                    <div class="shape-demo shape-extra-large">
-                        <span class="label-large">Extra Large</span>
-                    </div>
-                    <p class="body-small">28px radius</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Motion Section -->
-        <section class="section">
-            <h2 class="section-title headline-medium">Motion</h2>
-            <p class="body-medium" style="margin-bottom: 24px;">Hover over boxes to see transitions</p>
-            
-            <h3 class="title-medium">Duration Examples</h3>
-            <div class="grid">
-                <div>
-                    <div class="motion-demo duration-100 easing-standard shape-small">
-                        <span class="label-large">100ms</span>
-                    </div>
-                    <p class="body-small">Quick transition</p>
-                </div>
-                
-                <div>
-                    <div class="motion-demo duration-200 easing-standard shape-small">
-                        <span class="label-large">200ms</span>
-                    </div>
-                    <p class="body-small">Fast transition</p>
-                </div>
-                
-                <div>
-                    <div class="motion-demo duration-300 easing-standard shape-small">
-                        <span class="label-large">300ms</span>
-                    </div>
-                    <p class="body-small">Standard transition</p>
-                </div>
-                
-                <div>
-                    <div class="motion-demo duration-500 easing-standard shape-small">
-                        <span class="label-large">500ms</span>
-                    </div>
-                    <p class="body-small">Slow transition</p>
-                </div>
-            </div>
-            
-            <h3 class="title-medium">Easing Examples</h3>
-            <div class="grid">
-                <div>
-                    <div class="motion-demo duration-300 easing-linear shape-small">
-                        <span class="label-large">Linear</span>
-                    </div>
-                    <p class="body-small">Linear easing</p>
-                </div>
-                
-                <div>
-                    <div class="motion-demo duration-300 easing-standard shape-small">
-                        <span class="label-large">Standard</span>
-                    </div>
-                    <p class="body-small">Standard easing</p>
-                </div>
-                
-                <div>
-                    <div class="motion-demo duration-300 easing-emphasized shape-small">
-                        <span class="label-large">Emphasized</span>
-                    </div>
-                    <p class="body-small">Emphasized easing</p>
                 </div>
             </div>
         </section>
-        
-        <!-- State Section -->
-        <section class="section">
-            <h2 class="section-title headline-medium">State Layers</h2>
-            <p class="body-medium" style="margin-bottom: 24px;">Interact with elements to see state layers</p>
-            
-            <div class="grid">
-                <div>
-                    <div class="state-demo shape-small">
-                        <span>Hover Me</span>
+
+        <section class="ust-card">
+            <h2 class="title-medium">System feedback</h2>
+            <div class="ust-stack">
+                <div class="ust-alert ust-alert--success">
+                    <span class="ust-icon" aria-hidden="true">✔</span>
+                    <div>
+                        <p class="title-small">Publish succeeded</p>
+                        <p class="body-small">“Summer sale hub” is live and cached.</p>
                     </div>
-                    <p class="body-small">Hover state layer</p>
+                    <button class="ust-btn ust-btn--ghost">View page</button>
                 </div>
-                
-                <div>
-                    <div class="state-demo shape-small">
-                        <span>Click Me</span>
+                <div class="ust-alert ust-alert--warning">
+                    <span class="ust-icon" aria-hidden="true">!</span>
+                    <div>
+                        <p class="title-small">Redirect pending</p>
+                        <p class="body-small">Add a redirect for the retired spring campaign page.</p>
                     </div>
-                    <p class="body-small">Pressed state layer</p>
+                    <button class="ust-btn ust-btn--ghost">Create redirect</button>
                 </div>
             </div>
         </section>
@@ -641,14 +472,8 @@
     </div>
     
     <script>
-        // Simple theme toggle functionality
         function toggleTheme() {
-            // This is a simple demo. In production, you would:
-            // 1. Swap the light.css/dark.css link in the master.css
-            // 2. Store preference in localStorage
-            // 3. Load user preference on page load
-            
-            alert('To switch themes:\n\n1. Edit master.css\n2. Comment out light.css\n3. Uncomment dark.css\n\nFor dynamic switching, implement a proper theme system with JavaScript that swaps stylesheets.');
+            alert('To switch to the dark theme, edit master.css and swap light.css for dark.css. The design tokens stay consistent across both.');
         }
     </script>
 </body>
