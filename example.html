@@ -96,22 +96,22 @@
     <main class="ust-container ust-container--grid demo-page">
         <header class="ust-hero demo-span-full">
             <div class="ust-stack">
-                <span class="ust-badge ust-badge--accent">CMS ready</span>
+                <span class="ust-badge ust-badge--accent">GitHub-inspired</span>
                 <h1 class="ust-heading-3">Universal Scalable Tokens</h1>
-                <p class="ust-paragraph">WCAG-friendly blues, responsive grids, and drop-in UI primitives built to power content-heavy dashboards.</p>
+                <p class="ust-paragraph">Clean, professional design system inspired by GitHub's UX/UI. Features neutral colors, subtle borders, and accessible components for modern web applications.</p>
                 <div class="ust-cluster ust-cluster--spread">
                     <button class="ust-btn ust-btn--primary">Create entry</button>
-                    <button class="ust-btn ust-btn--accent">Review campaign</button>
+                    <button class="ust-btn ust-btn--secondary">Review campaign</button>
                 </div>
             </div>
             <div class="ust-stack">
                 <div class="ust-inline-status">
                     <span class="ust-status-dot ust-status-dot--success"></span>
-                    Blue/orange palette passes WCAG 2 AA for large text.
+                    GitHub-inspired palette with accessible contrast ratios.
                 </div>
                 <div class="ust-inline-status">
                     <span class="ust-status-dot ust-status-dot--warning"></span>
-                    Swap palettes in <code>palette.css</code> to match your brand.
+                    Swap colors in <code>palette.css</code> to match your brand.
                 </div>
             </div>
         </header>
@@ -119,32 +119,32 @@
         <section class="ust-card demo-span-full">
             <div class="demo-section-title">
                 <h2 class="title-medium">Theme colours</h2>
-                <span class="ust-badge ust-badge--accent">#0033A1 · #0A2240 · #F37121</span>
+                <span class="ust-badge ust-badge--accent">#0969da · #6e7781 · #1a7f37</span>
             </div>
             <div class="demo-swatches">
                 <div class="demo-swatch primary">
                     <span class="label-large">Primary</span>
-                    <p class="body-small">Brand blue for primary actions.</p>
+                    <p class="body-small">GitHub blue for primary actions.</p>
                 </div>
                 <div class="demo-swatch primary-container">
                     <span class="label-large">Primary container</span>
-                    <p class="body-small">Supporting surfaces for cards.</p>
+                    <p class="body-small">Light blue for surfaces.</p>
                 </div>
                 <div class="demo-swatch secondary">
                     <span class="label-large">Secondary</span>
-                    <p class="body-small">Deep navy for backgrounds.</p>
+                    <p class="body-small">Neutral gray for balance.</p>
                 </div>
                 <div class="demo-swatch tertiary">
-                    <span class="label-large">Accent</span>
-                    <p class="body-small">High-impact CTA orange.</p>
+                    <span class="label-large">Success</span>
+                    <p class="body-small">GitHub green for positive feedback.</p>
                 </div>
                 <div class="demo-swatch error">
                     <span class="label-large">Error</span>
-                    <p class="body-small">Retains accessible red.</p>
+                    <p class="body-small">GitHub red for warnings.</p>
                 </div>
                 <div class="demo-swatch surface">
                     <span class="label-large">Surface</span>
-                    <p class="body-small">Default panel canvas.</p>
+                    <p class="body-small">Clean white background.</p>
                 </div>
             </div>
         </section>
@@ -319,46 +319,46 @@
         </section>
         
         <!-- Button Examples Section -->
-        <section class="section">
-            <h2 class="section-title headline-medium">Component Examples</h2>
+        <section class="ust-card demo-span-full">
+            <h2 class="title-medium">Component Examples</h2>
             
-            <h3 class="title-medium">Buttons</h3>
-            <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px;">
-                <button class="button primary shape-medium elevation-1 label-large">
+            <h3 class="title-small">Buttons</h3>
+            <div style="display: flex; gap: var(--ust-space-sm); flex-wrap: wrap; margin-bottom: var(--ust-space-lg);">
+                <button class="ust-btn ust-btn--primary">
                     Primary Button
                 </button>
                 
-                <button class="button secondary shape-medium elevation-1 label-large">
+                <button class="ust-btn ust-btn--secondary">
                     Secondary Button
                 </button>
                 
-                <button class="button tertiary shape-medium elevation-1 label-large">
-                    Tertiary Button
+                <button class="ust-btn ust-btn--outline">
+                    Outline Button
                 </button>
                 
-                <button class="button error shape-medium elevation-1 label-large">
-                    Error Button
+                <button class="ust-btn ust-btn--destructive">
+                    Destructive Button
                 </button>
             </div>
             
-            <h3 class="title-medium">Cards</h3>
-            <div class="grid">
-                <article class="surface shape-large elevation-1" style="padding: 20px;">
-                    <h3 class="title-large" style="margin: 0 0 8px 0;">Card Title</h3>
-                    <p class="body-medium" style="margin: 0 0 12px 0;">
-                        This is a card component using surface color, large shape, and elevation 1.
+            <h3 class="title-small">Cards</h3>
+            <div class="ust-grid">
+                <article class="ust-card">
+                    <h3 class="title-medium">Card Title</h3>
+                    <p class="body-medium">
+                        This is a card component using clean GitHub-inspired styling with subtle borders.
                     </p>
-                    <button class="button primary shape-small label-medium">
+                    <button class="ust-btn ust-btn--primary">
                         Action
                     </button>
                 </article>
                 
-                <article class="surface-variant shape-large elevation-2" style="padding: 20px;">
-                    <h3 class="title-large" style="margin: 0 0 8px 0;">Variant Card</h3>
-                    <p class="body-medium" style="margin: 0 0 12px 0;">
-                        This card uses surface variant color with elevation 2 for more emphasis.
+                <article class="ust-card">
+                    <h3 class="title-medium">Another Card</h3>
+                    <p class="body-medium">
+                        Cards use 6px border radius and minimal shadows for a modern, clean appearance.
                     </p>
-                    <button class="button secondary shape-small label-medium">
+                    <button class="ust-btn ust-btn--secondary">
                         Learn More
                     </button>
                 </article>

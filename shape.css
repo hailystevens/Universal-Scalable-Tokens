@@ -27,18 +27,18 @@
     --md-sys-shape-corner-large-end-top-right: 16px;
     --md-sys-shape-corner-large-end-bottom-right-unit: 1px;
     --md-sys-shape-corner-large-end-bottom-right: 16px;
-    /* Large rounding */
+    /* Large rounding - GitHub emphasized (12px) */
     --md-sys-shape-corner-large-family: 1px;
     --md-sys-shape-corner-large-default-size-unit: 1px;
-    --md-sys-shape-corner-large-default-size: 16px;
-    /* Medium rounding */
+    --md-sys-shape-corner-large-default-size: 12px;
+    /* Medium rounding - GitHub standard (6px) */
     --md-sys-shape-corner-medium-family: 1px;
     --md-sys-shape-corner-medium-default-size-unit: 1px;
-    --md-sys-shape-corner-medium-default-size: 12px;
-    /* Small rounding */
+    --md-sys-shape-corner-medium-default-size: 6px;
+    /* Small rounding - GitHub subtle (3px) */
     --md-sys-shape-corner-small-family: 1px;
     --md-sys-shape-corner-small-default-size-unit: 1px;
-    --md-sys-shape-corner-small-default-size: 8px;
+    --md-sys-shape-corner-small-default-size: 3px;
     /* Extra small top rounding */
     --md-sys-shape-corner-extra-small-top-family: 1px;
     --md-sys-shape-corner-extra-small-top-default-size-unit: 1px;
@@ -47,10 +47,10 @@
     --md-sys-shape-corner-extra-small-top-top-left: 4px;
     --md-sys-shape-corner-extra-small-top-top-right-unit: 1px;
     --md-sys-shape-corner-extra-small-top-top-right: 4px;
-    /* Extra small rounding */
+    /* Extra small rounding - GitHub minimal (2px) */
     --md-sys-shape-corner-extra-small-family: 1px;
     --md-sys-shape-corner-extra-small-default-size-unit: 1px;
-    --md-sys-shape-corner-extra-small-default-size: 4px;
+    --md-sys-shape-corner-extra-small-default-size: 2px;
     /* No rounding */
     --md-sys-shape-corner-none-family: 1px;
     --md-sys-shape-corner-none-default-size-unit: 1px;

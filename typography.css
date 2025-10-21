@@ -315,12 +315,12 @@
     --md-sys-typescale-display-large-weight: var(--md-ref-typeface-weight-regular);
     /* Display Large font name */
     --md-sys-typescale-display-large-font: var(--md-ref-typeface-brand);
-    /* Plain typeface */
-    --md-ref-typeface-plain: Roboto;
-    /* Brand typeface */
-    --md-ref-typeface-brand: Roboto;
-    /* Bold weight */
-    --md-ref-typeface-weight-bold: 700;
+    /* Plain typeface - GitHub system font stack */
+    --md-ref-typeface-plain: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    /* Brand typeface - GitHub system font stack */
+    --md-ref-typeface-brand: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    /* Bold weight - GitHub uses 600 for semibold */
+    --md-ref-typeface-weight-bold: 600;
     /* Medium weight */
     --md-ref-typeface-weight-medium: 500;
     /* Regular weight */

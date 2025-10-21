@@ -1,14 +1,26 @@
 /**
  * Universal Scalable Design Tokens - Master Stylesheet
  * 
- * This file imports all design token files in the correct order.
- * Import this single file in your HTML to use all design tokens.
+ * GitHub-inspired UI design system built on Material Design 3 principles.
+ * This file imports all design token files in the correct order for a
+ * clean, accessible, and modern interface.
  * 
- * Usage:
+ * USAGE:
  * <link rel="stylesheet" href="path/to/master.css">
  * 
- * For theme switching between light and dark mode, replace the light.css
- * import with dark.css import as needed.
+ * KEY FEATURES:
+ * - GitHub-inspired neutral color palette with accessible blues and greens
+ * - System font stack for native look and feel
+ * - Subtle borders and minimal shadows for clean appearance
+ * - 6px default border radius (GitHub standard)
+ * - Consistent 8px spacing grid
+ * - Professional button, form, table, and card components
+ * 
+ * THEME SWITCHING:
+ * For dark mode, replace light.css import with dark.css below.
+ * 
+ * CUSTOMIZATION:
+ * Edit palette.css to change brand colors while maintaining the system structure.
  */
 
 /* 1. Base Palette - Raw color definitions */
