@@ -91,27 +91,29 @@ This design token system provides a complete foundation for building consistent,
 ### Component Example
 
 ```html
-<section class="ust-container ust-container--grid">
+<section class="ust-stack">
   <header class="ust-hero">
     <h1 class="ust-heading-3">Welcome back</h1>
     <p class="ust-paragraph">Here is a snapshot of your product health.</p>
     <div class="ust-cluster ust-cluster--spread">
       <button class="ust-btn ust-btn--primary">Create report</button>
-      <button class="ust-btn ust-btn--accent">Launch campaign</button>
+      <button class="ust-btn ust-btn--ghost">Dismiss</button>
     </div>
   </header>
 
-  <article class="ust-card">
-    <h2 class="title-medium">Active users</h2>
-    <p class="display-small">12,480</p>
-    <span class="ust-badge ust-badge--success">+8% WoW</span>
-  </article>
+  <div class="ust-dashboard-grid">
+    <article class="ust-dashboard-widget">
+      <h2 class="title-medium">Active users</h2>
+      <p class="display-small">12,480</p>
+      <span class="ust-badge ust-badge--success">+8% WoW</span>
+    </article>
 
-  <article class="ust-card">
-    <h2 class="title-medium">Onboarding completion</h2>
-    <progress class="ust-progress ust-progress--accent" value="72" max="100"></progress>
-    <span class="ust-inline-status"><span class="ust-status-dot ust-status-dot--success"></span>72% finished</span>
-  </article>
+    <article class="ust-dashboard-widget">
+      <h2 class="title-medium">Onboarding completion</h2>
+      <progress class="ust-progress" value="72" max="100"></progress>
+      <span class="ust-inline-status"><span class="ust-status-dot ust-status-dot--success"></span>72% finished</span>
+    </article>
+  </div>
 </section>
 ```
 

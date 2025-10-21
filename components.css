@@ -41,29 +41,21 @@
     --ust-color-surface-variant: var(--md-sys-color-surface-variant);
     --ust-color-surface-inverse: var(--md-sys-color-inverse-surface);
     --ust-color-outline: var(--md-sys-color-outline);
-    --ust-color-outline-strong: color-mix(in srgb, var(--md-sys-color-outline) 65%, var(--md-sys-color-secondary) 35%);
+    --ust-color-outline-strong: color-mix(in srgb, var(--md-sys-color-outline) 80%, var(--md-sys-color-on-surface) 20%);
     --ust-color-text: var(--md-sys-color-on-surface);
-    --ust-color-text-muted: color-mix(in srgb, var(--md-sys-color-on-surface) 55%, transparent);
+    --ust-color-text-muted: color-mix(in srgb, var(--md-sys-color-on-surface) 70%, transparent);
     --ust-color-text-strong: var(--md-sys-color-on-background);
-    --ust-color-brand: var(--md-sys-color-primary);
-    --ust-color-brand-contrast: var(--md-sys-color-on-primary);
-    --ust-color-accent: var(--md-sys-color-tertiary);
-    --ust-color-accent-contrast: var(--md-sys-color-on-tertiary);
+    --ust-color-accent: var(--md-sys-color-primary);
+    --ust-color-accent-contrast: var(--md-sys-color-on-primary);
     --ust-color-secondary: var(--md-sys-color-secondary);
     --ust-color-secondary-contrast: var(--md-sys-color-on-secondary);
     --ust-color-destructive: var(--md-sys-color-error);
     --ust-color-destructive-contrast: var(--md-sys-color-on-error);
-    --ust-color-success: #1e7a3d;
-    --ust-color-success-contrast: #ffffff;
-    --ust-color-warning: #b85c00;
-    --ust-color-warning-contrast: #ffffff;
-    --ust-color-info: var(--ust-color-brand);
-    --ust-color-info-contrast: var(--ust-color-brand-contrast);
 
     /* Effects */
     --ust-focus-outline-width: 3px;
     --ust-focus-outline-offset: 2px;
-    --ust-focus-outline-color: color-mix(in srgb, var(--ust-color-accent) 55%, transparent);
+    --ust-focus-outline-color: color-mix(in srgb, var(--md-sys-color-primary) 65%, transparent);
     --ust-transition-base: var(--md-sys-motion-duration-200, 200ms) cubic-bezier(
         var(--md-sys-motion-easing-standard-x0, 0.2),
         var(--md-sys-motion-easing-standard-y0, 0),
@@ -78,8 +70,6 @@
     --ust-control-height-sm: 2rem;
     --ust-control-height-md: 2.75rem;
     --ust-control-height-lg: 3.25rem;
-    --ust-grid-column-min: clamp(16rem, 28vw, 24rem);
-    --ust-grid-gap: var(--ust-space-lg);
 }
 
 *, *::before, *::after {
@@ -92,9 +82,6 @@ body {
     background-color: var(--md-sys-color-background);
     color: var(--ust-color-text);
     line-height: var(--ust-line-height-default);
-    display: grid;
-    min-block-size: 100dvh;
-    grid-template-columns: minmax(0, 1fr);
 }
 
 /* Remove default block margins to make spacing utilities deterministic */
@@ -227,7 +214,7 @@ pre {
 }
 
 mark {
-    background-color: color-mix(in srgb, var(--ust-color-accent) 35%, transparent);
+    background-color: color-mix(in srgb, var(--ust-color-accent) 25%, transparent);
     color: var(--ust-color-text-strong);
     padding: 0 var(--ust-space-2xs);
     border-radius: var(--ust-radius-sm);
@@ -235,7 +222,7 @@ mark {
 
 /* Links */
 a {
-    color: var(--ust-color-brand);
+    color: var(--ust-color-accent);
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 0.15em;
@@ -244,7 +231,7 @@ a {
 
 a:hover,
 a:focus-visible {
-    color: color-mix(in srgb, var(--ust-color-accent) 60%, var(--ust-color-brand) 40%);
+    color: color-mix(in srgb, var(--ust-color-accent) 85%, var(--ust-color-accent-contrast) 15%);
     text-decoration-color: currentColor;
 }
 
@@ -289,10 +276,6 @@ hr,
 
 .ust-divider--dashed {
     background-image: repeating-linear-gradient(90deg, var(--ust-color-outline) 0, var(--ust-color-outline) 8px, transparent 8px, transparent 16px);
-}
-
-.ust-divider--accent {
-    background: color-mix(in srgb, var(--ust-color-accent) 70%, transparent);
 }
 
 /* Images & media */
@@ -352,7 +335,7 @@ img, video {
 }
 
 .ust-icon-button:hover {
-    background-color: color-mix(in srgb, var(--ust-color-brand) 15%, transparent);
+    background-color: color-mix(in srgb, var(--ust-color-accent) 15%, transparent);
 }
 
 .ust-icon-button:focus-visible {
@@ -384,8 +367,8 @@ input[type="reset"],
     letter-spacing: var(--md-sys-typescale-label-large-tracking);
     text-transform: var(--md-sys-typescale-label-large-text-transform);
     cursor: pointer;
-    background-color: var(--ust-color-brand);
-    color: var(--ust-color-brand-contrast);
+    background-color: var(--ust-color-accent);
+    color: var(--ust-color-accent-contrast);
     transition: transform var(--ust-transition-base), box-shadow var(--ust-transition-base),
         background-color var(--ust-transition-base), color var(--ust-transition-base);
     text-decoration: none;
@@ -429,18 +412,13 @@ input[type="reset"]:disabled,
 }
 
 .ust-btn--primary {
-    background-color: var(--ust-color-brand);
-    color: var(--ust-color-brand-contrast);
+    background-color: var(--ust-color-accent);
+    color: var(--ust-color-accent-contrast);
 }
 
 .ust-btn--secondary {
     background-color: var(--ust-color-secondary);
     color: var(--ust-color-secondary-contrast);
-}
-
-.ust-btn--accent {
-    background-color: var(--ust-color-accent);
-    color: var(--ust-color-accent-contrast);
 }
 
 .ust-btn--surface {
@@ -451,7 +429,7 @@ input[type="reset"]:disabled,
 
 .ust-btn--outline {
     background-color: transparent;
-    color: var(--ust-color-brand);
+    color: var(--ust-color-accent);
     border-color: currentColor;
 }
 
@@ -463,7 +441,7 @@ input[type="reset"]:disabled,
 .ust-btn--link {
     background-color: transparent;
     border-color: transparent;
-    color: var(--ust-color-brand);
+    color: var(--ust-color-accent);
     padding-inline: 0;
     text-decoration: underline;
     text-underline-offset: 0.2em;
@@ -533,7 +511,7 @@ textarea:focus-visible,
 .ust-input:focus-visible {
     outline: var(--ust-focus-outline-width) solid var(--ust-focus-outline-color);
     outline-offset: var(--ust-focus-outline-offset);
-    border-color: var(--ust-color-brand);
+    border-color: var(--ust-color-accent);
 }
 
 input:disabled,
@@ -618,21 +596,18 @@ textarea {
 }
 
 .ust-input--success {
-    border-color: var(--ust-color-success);
-    background-color: color-mix(in srgb, var(--ust-color-success) 10%, transparent);
-    color: var(--ust-color-success);
+    border-color: color-mix(in srgb, var(--ust-color-secondary) 50%, var(--ust-color-accent) 50%);
 }
 
 .ust-input--warning {
-    border-color: var(--ust-color-warning);
-    background-color: color-mix(in srgb, var(--ust-color-warning) 12%, transparent);
-    color: var(--ust-color-warning);
+    border-color: color-mix(in srgb, var(--ust-color-destructive) 35%, var(--ust-color-secondary) 65%);
+    background-color: color-mix(in srgb, var(--ust-color-destructive) 10%, transparent);
 }
 
 /* Checkboxes & Radios */
 input[type="checkbox"],
 input[type="radio"] {
-    accent-color: var(--ust-color-brand);
+    accent-color: var(--ust-color-accent);
 }
 
 input[type="checkbox"].ust-control,
@@ -665,7 +640,7 @@ input[type="checkbox"].ust-checkbox::after {
     content: "";
     inline-size: 0.55rem;
     block-size: 0.35rem;
-    border: var(--ust-border-width-strong) solid var(--ust-color-brand-contrast);
+    border: var(--ust-border-width-strong) solid var(--ust-color-accent-contrast);
     border-top: 0;
     border-left: 0;
     transform: rotate(45deg) scale(0);
@@ -675,8 +650,8 @@ input[type="checkbox"].ust-checkbox::after {
 
 input[type="checkbox"].ust-control:checked,
 input[type="checkbox"].ust-checkbox:checked {
-    background-color: var(--ust-color-brand);
-    border-color: var(--ust-color-brand);
+    background-color: var(--ust-color-accent);
+    border-color: var(--ust-color-accent);
 }
 
 input[type="checkbox"].ust-control:checked::after,
@@ -686,8 +661,8 @@ input[type="checkbox"].ust-checkbox:checked::after {
 
 input[type="checkbox"].ust-control:indeterminate,
 input[type="checkbox"].ust-checkbox:indeterminate {
-    background-color: var(--ust-color-brand);
-    border-color: var(--ust-color-brand);
+    background-color: var(--ust-color-accent);
+    border-color: var(--ust-color-accent);
 }
 
 input[type="checkbox"].ust-control:indeterminate::after,
@@ -696,7 +671,7 @@ input[type="checkbox"].ust-checkbox:indeterminate::after {
     border: 0;
     inline-size: 0.8rem;
     block-size: 0.15rem;
-    background-color: var(--ust-color-brand-contrast);
+    background-color: var(--ust-color-accent-contrast);
 }
 
 input[type="radio"].ust-control::after,
@@ -705,15 +680,15 @@ input[type="radio"].ust-radio::after {
     inline-size: 0.55rem;
     block-size: 0.55rem;
     border-radius: 50%;
-    background-color: var(--ust-color-brand-contrast);
+    background-color: var(--ust-color-accent-contrast);
     transform: scale(0);
     transition: transform var(--ust-transition-base);
 }
 
 input[type="radio"].ust-control:checked,
 input[type="radio"].ust-radio:checked {
-    background-color: var(--ust-color-brand);
-    border-color: var(--ust-color-brand);
+    background-color: var(--ust-color-accent);
+    border-color: var(--ust-color-accent);
 }
 
 input[type="radio"].ust-control:checked::after,
@@ -764,13 +739,13 @@ input[type="checkbox"].ust-switch::after {
 }
 
 input[type="checkbox"].ust-switch:checked {
-    background-color: var(--ust-color-brand);
-    border-color: var(--ust-color-brand);
+    background-color: var(--ust-color-accent);
+    border-color: var(--ust-color-accent);
 }
 
 input[type="checkbox"].ust-switch:checked::after {
     transform: translateX(1.2rem);
-    background-color: var(--ust-color-brand-contrast);
+    background-color: var(--ust-color-accent-contrast);
 }
 
 input[type="checkbox"].ust-switch:focus-visible {
@@ -805,10 +780,10 @@ input[type="range"]::-webkit-slider-thumb {
     inline-size: 1.1rem;
     block-size: 1.1rem;
     border-radius: 50%;
-    background: var(--ust-color-brand);
+    background: var(--ust-color-accent);
     margin-top: -0.375rem;
     border: none;
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ust-color-brand) 20%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ust-color-accent) 20%, transparent);
 }
 
 input[type="range"]::-moz-range-track {
@@ -821,9 +796,9 @@ input[type="range"]::-moz-range-thumb {
     inline-size: 1.1rem;
     block-size: 1.1rem;
     border-radius: 50%;
-    background: var(--ust-color-brand);
+    background: var(--ust-color-accent);
     border: none;
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ust-color-brand) 20%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ust-color-accent) 20%, transparent);
 }
 
 /* Progress & meter */
@@ -842,21 +817,13 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-    background-color: var(--ust-color-brand);
+    background-color: var(--ust-color-accent);
     border-radius: inherit;
 }
 
 progress::-moz-progress-bar {
-    background-color: var(--ust-color-brand);
+    background-color: var(--ust-color-accent);
     border-radius: inherit;
-}
-
-progress.ust-progress--accent::-webkit-progress-value {
-    background-color: var(--ust-color-accent);
-}
-
-progress.ust-progress--accent::-moz-progress-bar {
-    background-color: var(--ust-color-accent);
 }
 
 meter {
@@ -903,8 +870,8 @@ meter::-webkit-meter-even-less-good-value {
     inline-size: 2rem;
     block-size: 2rem;
     border-radius: 50%;
-    border: 0.2rem solid color-mix(in srgb, var(--ust-color-brand) 15%, transparent);
-    border-top-color: var(--ust-color-brand);
+    border: 0.2rem solid color-mix(in srgb, var(--ust-color-accent) 15%, transparent);
+    border-top-color: var(--ust-color-accent);
     animation: ust-spin 1s linear infinite;
 }
 
@@ -938,11 +905,11 @@ meter::-webkit-meter-even-less-good-value {
 }
 
 .ust-status-dot--success {
-    background-color: var(--ust-color-success);
+    background-color: color-mix(in srgb, var(--ust-color-secondary) 60%, var(--ust-color-accent) 40%);
 }
 
 .ust-status-dot--warning {
-    background-color: var(--ust-color-warning);
+    background-color: color-mix(in srgb, var(--ust-color-destructive) 30%, var(--ust-color-secondary) 70%);
 }
 
 .ust-status-dot--error {
@@ -956,8 +923,8 @@ meter::-webkit-meter-even-less-good-value {
     gap: var(--ust-space-2xs);
     padding: 0 var(--ust-space-sm);
     border-radius: var(--ust-radius-pill);
-    background-color: color-mix(in srgb, var(--ust-color-brand) 15%, transparent);
-    color: var(--ust-color-brand);
+    background-color: color-mix(in srgb, var(--ust-color-accent) 15%, transparent);
+    color: var(--ust-color-accent);
     font-family: var(--md-sys-typescale-label-small-font);
     font-size: var(--md-sys-typescale-label-small-size);
     line-height: var(--md-sys-typescale-label-small-line-height);
@@ -966,8 +933,8 @@ meter::-webkit-meter-even-less-good-value {
 }
 
 .ust-badge--solid {
-    background-color: var(--ust-color-brand);
-    color: var(--ust-color-brand-contrast);
+    background-color: var(--ust-color-accent);
+    color: var(--ust-color-accent-contrast);
 }
 
 .ust-badge--outline {
@@ -976,18 +943,13 @@ meter::-webkit-meter-even-less-good-value {
 }
 
 .ust-badge--success {
-    background-color: color-mix(in srgb, var(--ust-color-success) 15%, transparent);
-    color: var(--ust-color-success);
+    background-color: color-mix(in srgb, var(--ust-color-secondary) 20%, transparent);
+    color: color-mix(in srgb, var(--ust-color-secondary) 60%, var(--ust-color-accent) 40%);
 }
 
 .ust-badge--warning {
-    background-color: color-mix(in srgb, var(--ust-color-warning) 18%, transparent);
-    color: var(--ust-color-warning);
-}
-
-.ust-badge--accent {
-    background-color: color-mix(in srgb, var(--ust-color-accent) 20%, transparent);
-    color: var(--ust-color-accent);
+    background-color: color-mix(in srgb, var(--ust-color-destructive) 15%, transparent);
+    color: color-mix(in srgb, var(--ust-color-destructive) 65%, var(--ust-color-text) 35%);
 }
 
 .ust-chip,
@@ -1001,27 +963,6 @@ meter::-webkit-meter-even-less-good-value {
     border: var(--ust-border-width-hairline) solid var(--ust-color-outline);
     background-color: var(--ust-color-surface);
     color: var(--ust-color-text);
-}
-
-.ust-chip--accent,
-.ust-tag--accent {
-    border-color: var(--ust-color-accent);
-    background-color: color-mix(in srgb, var(--ust-color-accent) 18%, var(--ust-color-surface) 82%);
-    color: var(--ust-color-accent);
-}
-
-.ust-chip--success,
-.ust-tag--success {
-    border-color: var(--ust-color-success);
-    background-color: color-mix(in srgb, var(--ust-color-success) 18%, var(--ust-color-surface) 82%);
-    color: var(--ust-color-success);
-}
-
-.ust-chip--warning,
-.ust-tag--warning {
-    border-color: var(--ust-color-warning);
-    background-color: color-mix(in srgb, var(--ust-color-warning) 20%, var(--ust-color-surface) 80%);
-    color: var(--ust-color-warning);
 }
 
 .ust-chip__close {
@@ -1087,8 +1028,7 @@ table,
 
 table thead,
 .ust-table thead {
-    background-color: color-mix(in srgb, var(--ust-color-secondary) 18%, var(--ust-color-surface) 82%);
-    color: var(--ust-color-secondary);
+    background-color: color-mix(in srgb, var(--ust-color-surface-variant) 75%, transparent);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-size: 0.75rem;
@@ -1105,7 +1045,7 @@ table td,
 
 table tbody tr:hover,
 .ust-table tbody tr:hover {
-    background-color: color-mix(in srgb, var(--ust-color-accent) 10%, var(--ust-color-surface) 90%);
+    background-color: color-mix(in srgb, var(--ust-color-surface-variant) 50%, transparent);
 }
 
 table tbody tr:last-child td,
@@ -1129,7 +1069,7 @@ table [aria-sort="ascending"],
 table [aria-sort="descending"],
 .ust-table [aria-sort="ascending"],
 .ust-table [aria-sort="descending"] {
-    color: var(--ust-color-brand);
+    color: var(--ust-color-accent);
 }
 
 /* Lists & tree views */
@@ -1296,8 +1236,8 @@ dialog.ust-dialog::backdrop {
 
 .ust-tab[aria-selected="true"],
 .ust-tab.ust-tab--active {
-    background-color: var(--ust-color-brand);
-    color: var(--ust-color-brand-contrast);
+    background-color: var(--ust-color-accent);
+    color: var(--ust-color-accent-contrast);
 }
 
 .ust-tab[aria-selected="true"]:focus-visible,
@@ -1370,13 +1310,13 @@ details.ust-accordion[open] {
 
 .ust-menu__item:hover,
 .ust-menu__item[aria-selected="true"] {
-    background-color: color-mix(in srgb, var(--ust-color-brand) 12%, transparent);
-    color: var(--ust-color-brand);
+    background-color: color-mix(in srgb, var(--ust-color-accent) 12%, transparent);
+    color: var(--ust-color-accent);
 }
 
 .ust-menu__item:focus-visible {
     outline: none;
-    background-color: color-mix(in srgb, var(--ust-color-brand) 15%, transparent);
+    background-color: color-mix(in srgb, var(--ust-color-accent) 15%, transparent);
 }
 
 /* Alerts, toasts & notifications */
@@ -1395,18 +1335,15 @@ details.ust-accordion[open] {
 }
 
 .ust-alert--info {
-    border-color: color-mix(in srgb, var(--ust-color-brand) 40%, var(--ust-color-accent) 60%);
-    background-color: color-mix(in srgb, var(--ust-color-accent) 12%, transparent);
+    border-color: color-mix(in srgb, var(--ust-color-secondary) 70%, transparent);
 }
 
 .ust-alert--success {
-    border-color: var(--ust-color-success);
-    background-color: color-mix(in srgb, var(--ust-color-success) 12%, transparent);
+    border-color: color-mix(in srgb, var(--ust-color-secondary) 60%, var(--ust-color-accent) 40%);
 }
 
 .ust-alert--warning {
-    border-color: var(--ust-color-warning);
-    background-color: color-mix(in srgb, var(--ust-color-warning) 12%, transparent);
+    border-color: color-mix(in srgb, var(--ust-color-destructive) 45%, var(--ust-color-secondary) 55%);
 }
 
 .ust-alert--error {
@@ -1473,12 +1410,12 @@ details.ust-accordion[open] {
 }
 
 .ust-pagination__item:hover {
-    background-color: color-mix(in srgb, var(--ust-color-brand) 12%, transparent);
+    background-color: color-mix(in srgb, var(--ust-color-accent) 12%, transparent);
 }
 
 .ust-pagination__item[aria-current="page"] {
-    background-color: var(--ust-color-brand);
-    color: var(--ust-color-brand-contrast);
+    background-color: var(--ust-color-accent);
+    color: var(--ust-color-accent-contrast);
 }
 
 /* Stepper / wizard */
@@ -1510,15 +1447,15 @@ details.ust-accordion[open] {
 }
 
 .ust-step--active .ust-step__indicator {
-    background-color: var(--ust-color-brand);
-    border-color: var(--ust-color-brand);
-    color: var(--ust-color-brand-contrast);
+    background-color: var(--ust-color-accent);
+    border-color: var(--ust-color-accent);
+    color: var(--ust-color-accent-contrast);
 }
 
 .ust-step--complete .ust-step__indicator {
-    background-color: color-mix(in srgb, var(--ust-color-secondary) 55%, var(--ust-color-brand) 45%);
+    background-color: color-mix(in srgb, var(--ust-color-secondary) 55%, var(--ust-color-accent) 45%);
     border-color: transparent;
-    color: var(--ust-color-brand-contrast);
+    color: var(--ust-color-accent-contrast);
 }
 
 .ust-stepper__connector {
@@ -1552,8 +1489,8 @@ details.ust-accordion[open] {
 }
 
 .ust-filter-chip[aria-pressed="true"] {
-    background-color: var(--ust-color-brand);
-    color: var(--ust-color-brand-contrast);
+    background-color: var(--ust-color-accent);
+    color: var(--ust-color-accent-contrast);
 }
 
 /* Date & time pickers */
@@ -1581,8 +1518,8 @@ details.ust-accordion[open] {
 
 .ust-calendar-grid button:hover,
 .ust-calendar-grid button[aria-selected="true"] {
-    background-color: var(--ust-color-brand);
-    color: var(--ust-color-brand-contrast);
+    background-color: var(--ust-color-accent);
+    color: var(--ust-color-accent-contrast);
 }
 
 /* File upload */
@@ -1601,15 +1538,15 @@ details.ust-accordion[open] {
 
 .ust-upload-zone:hover,
 .ust-upload-zone--dragover {
-    border-color: var(--ust-color-brand);
-    background-color: color-mix(in srgb, var(--ust-color-brand) 10%, transparent);
+    border-color: var(--ust-color-accent);
+    background-color: color-mix(in srgb, var(--ust-color-accent) 10%, transparent);
 }
 
 /* Ratings */
 .ust-rating {
     display: inline-flex;
     gap: var(--ust-space-xs);
-    color: color-mix(in srgb, var(--ust-color-secondary) 60%, var(--ust-color-brand) 40%);
+    color: color-mix(in srgb, var(--ust-color-secondary) 60%, var(--ust-color-accent) 40%);
 }
 
 .ust-rating__item {
@@ -1620,7 +1557,7 @@ details.ust-accordion[open] {
 .ust-rating__item:hover,
 .ust-rating__item[aria-checked="true"] {
     transform: scale(1.1);
-    color: var(--ust-color-brand);
+    color: var(--ust-color-accent);
 }
 
 /* Navigation shells */
@@ -1650,8 +1587,8 @@ details.ust-accordion[open] {
 
 .ust-nav__item:hover,
 .ust-nav__item[aria-current="page"] {
-    background-color: color-mix(in srgb, var(--ust-color-brand) 12%, transparent);
-    color: var(--ust-color-brand);
+    background-color: color-mix(in srgb, var(--ust-color-accent) 12%, transparent);
+    color: var(--ust-color-accent);
 }
 
 .ust-app-bar,
@@ -1770,8 +1707,8 @@ details.ust-accordion[open] {
 }
 
 .ust-inline-edit--editing {
-    background-color: color-mix(in srgb, var(--ust-color-brand) 12%, transparent);
-    border: 1px solid var(--ust-color-brand);
+    background-color: color-mix(in srgb, var(--ust-color-accent) 12%, transparent);
+    border: 1px solid var(--ust-color-accent);
 }
 
 .ust-autosave-indicator {
@@ -1787,7 +1724,7 @@ details.ust-accordion[open] {
     inline-size: 0.65rem;
     block-size: 0.65rem;
     border-radius: 50%;
-    background-color: color-mix(in srgb, var(--ust-color-secondary) 55%, var(--ust-color-brand) 45%);
+    background-color: color-mix(in srgb, var(--ust-color-secondary) 55%, var(--ust-color-accent) 45%);
     animation: ust-skeleton 1.2s infinite;
 }
 
@@ -1886,13 +1823,6 @@ details.ust-accordion[open] {
     padding-block: var(--ust-space-xl);
 }
 
-.ust-container--grid {
-    display: grid;
-    gap: var(--ust-grid-gap);
-    grid-template-columns: repeat(auto-fit, minmax(var(--ust-grid-column-min), 1fr));
-    align-items: start;
-}
-
 .ust-stack {
     display: grid;
     gap: var(--ust-space-md);
@@ -1919,13 +1849,11 @@ details.ust-accordion[open] {
 
 .ust-grid {
     display: grid;
-    gap: var(--ust-grid-gap);
-    grid-template-columns: repeat(auto-fit, minmax(var(--ust-grid-column-min), 1fr));
-    align-items: start;
+    gap: var(--ust-space-lg);
 }
 
 .ust-grid--responsive {
-    grid-template-columns: repeat(auto-fit, minmax(clamp(14rem, 26vw, 22rem), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 }
 
 .ust-grid--masonry {
@@ -1986,9 +1914,8 @@ details.ust-accordion[open] {
     gap: var(--ust-space-lg);
     padding: var(--ust-space-2xl) clamp(var(--ust-space-md), 6vw, var(--ust-space-2xl));
     background: linear-gradient(135deg,
-            color-mix(in srgb, var(--ust-color-brand) 22%, transparent) 0%,
-            color-mix(in srgb, var(--ust-color-accent) 30%, transparent) 45%,
-            color-mix(in srgb, var(--ust-color-secondary) 24%, transparent) 100%);
+            color-mix(in srgb, var(--ust-color-accent) 18%, transparent) 0%,
+            color-mix(in srgb, var(--ust-color-secondary) 22%, transparent) 100%);
     border-radius: var(--ust-radius-lg);
     color: var(--ust-color-text-strong);
 }
@@ -2144,16 +2071,15 @@ details.ust-accordion[open] {
 
 .ust-chat-message--self {
     margin-inline-start: auto;
-    background-color: color-mix(in srgb, var(--ust-color-brand) 20%, transparent);
+    background-color: color-mix(in srgb, var(--ust-color-accent) 20%, transparent);
 }
 
 .ust-file-viewer {
     display: grid;
     gap: var(--ust-space-md);
     border-radius: var(--ust-radius-lg);
-    border: 1px solid color-mix(in srgb, var(--ust-color-brand) 45%, var(--ust-color-accent) 55%);
+    border: 1px solid color-mix(in srgb, var(--ust-color-outline) 30%, transparent);
     padding: var(--ust-space-lg);
-    background-color: color-mix(in srgb, var(--ust-color-accent) 8%, var(--ust-color-surface) 92%);
 }
 
 .ust-workflow-tracker {
@@ -2222,8 +2148,8 @@ details.ust-accordion[open] {
     inset-inline-start: 1rem;
     inset-block-start: -4rem;
     padding: var(--ust-space-xs) var(--ust-space-md);
-    background-color: var(--ust-color-brand);
-    color: var(--ust-color-brand-contrast);
+    background-color: var(--ust-color-accent);
+    color: var(--ust-color-accent-contrast);
     border-radius: var(--ust-radius-pill);
     transition: inset-block-start var(--ust-transition-base);
     z-index: 2000;
@@ -2262,7 +2188,7 @@ details.ust-accordion[open] {
 }
 
 .ust-command-palette__item[aria-selected="true"] {
-    background-color: color-mix(in srgb, var(--ust-color-brand) 12%, transparent);
+    background-color: color-mix(in srgb, var(--ust-color-accent) 12%, transparent);
 }
 
 .ust-notification-center {
