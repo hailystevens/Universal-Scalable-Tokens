@@ -39,11 +39,13 @@ This design token system provides a complete foundation for building consistent,
 
 ### Default Theme at a Glance
 
-- **Primary brand blue** `#0033A1` and **deep navy** `#0A2240` create readable base surfaces.
-- **Accent orange** `#F37121` is available for calls to action, indicators, and highlight treatments.
-- **Semantic feedback** colours stick to the classics: success `#1E7A3D`, warning `#B85C00`, and error `#BA1A1A`.
-- **Responsive layout primitives** (`.ust-container--grid`, `.ust-grid`, `.ust-sidebar-layout`) auto-fit cards, tables, and panels in CMS dashboards.
-- **Data presentation essentials**—tables, lists, dropdowns, file viewers—arrive pre-styled for consistent admin experiences.
+- **GitHub-inspired blue** `#0969da` for primary actions with subtle, accessible styling.
+- **Neutral grays** `#24292f`, `#6e7781`, and `#d0d7de` create clean, professional surfaces and borders.
+- **Success green** `#1a7f37` for positive feedback and completed states.
+- **Semantic feedback** colors: warning `#bf8700` and error `#cf222e`.
+- **Responsive layout primitives** (`.ust-container--grid`, `.ust-grid`, `.ust-sidebar-layout`) auto-fit cards, tables, and panels.
+- **Clean UI components**—buttons, forms, tables, badges, alerts—pre-styled for GitHub-like admin experiences.
+- **Subtle design** with 6px border radius, minimal shadows, and 1px borders for a modern, clean look.
 
 ## 🚀 Getting Started
 
@@ -147,20 +149,20 @@ This is where you define your **raw color values**. Replace these with your bran
 
 ```css
 :root {
-    /* Primary color palette - CUSTOMIZE THESE */
-    --md-ref-palette-primary40: #0033a1;   /* Core brand blue */
-    --md-ref-palette-primary80: #7998ff;   /* Lighter variant */
+    /* Primary palette - GitHub-inspired blue (#0969da) */
+    --md-ref-palette-primary40: #0969da;   /* GitHub primary blue */
+    --md-ref-palette-primary80: #80b3ff;   /* Lighter variant */
 
-    /* Secondary color palette - CUSTOMIZE THESE */
-    --md-ref-palette-secondary40: #0a2240; /* Deep navy support */
-    --md-ref-palette-secondary80: #56759f; /* Lighter variant */
+    /* Secondary palette - Neutral grays (#6e7781) */
+    --md-ref-palette-secondary40: #30363d; /* GitHub dark gray */
+    --md-ref-palette-secondary60: #6e7781; /* GitHub medium gray */
 
-    /* Accent palette - CUSTOMIZE THESE */
-    --md-ref-palette-tertiary60: #f37121;  /* High-impact accent */
-    --md-ref-palette-tertiary90: #ffd9bf;  /* Soft accent background */
+    /* Tertiary palette - Success green (#1a7f37) */
+    --md-ref-palette-tertiary40: #1a7f37;  /* GitHub success green */
+    --md-ref-palette-tertiary90: #aff5b4;  /* Light green background */
 
-    /* Error color palette - CUSTOMIZE THESE */
-    --md-ref-palette-error40: #ba1a1a;     /* Accessible red */
+    /* Error color palette */
+    --md-ref-palette-error40: #cf222e;     /* GitHub error red */
 }
 ```
 
@@ -186,11 +188,11 @@ Edit **typography.css** to match your brand's type system:
 ```css
 :root {
     /* Replace with your font families */
-    --md-ref-typeface-plain: Roboto;   /* CUSTOMIZE: Your body font */
-    --md-ref-typeface-brand: Roboto;   /* CUSTOMIZE: Your brand font */
+    --md-ref-typeface-plain: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;   /* CUSTOMIZE: GitHub system fonts */
+    --md-ref-typeface-brand: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;   /* CUSTOMIZE: Your brand font */
     
     /* Font weights - CUSTOMIZE THESE */
-    --md-ref-typeface-weight-bold: 700;
+    --md-ref-typeface-weight-bold: 600;    /* GitHub uses 600 for semibold */
     --md-ref-typeface-weight-medium: 500;
     --md-ref-typeface-weight-regular: 400;
     
@@ -207,12 +209,12 @@ Edit **shape.css** to adjust border radius values:
 
 ```css
 :root {
-    /* Adjust these for your brand's shape language */
-    --md-sys-shape-corner-extra-small-default-size: 4px;   /* CUSTOMIZE */
-    --md-sys-shape-corner-small-default-size: 8px;         /* CUSTOMIZE */
-    --md-sys-shape-corner-medium-default-size: 12px;       /* CUSTOMIZE */
-    --md-sys-shape-corner-large-default-size: 16px;        /* CUSTOMIZE */
-    --md-sys-shape-corner-extra-large-default-size: 28px;  /* CUSTOMIZE */
+    /* Adjust these for your brand's shape language - GitHub style */
+    --md-sys-shape-corner-extra-small-default-size: 2px;   /* CUSTOMIZE: Very subtle */
+    --md-sys-shape-corner-small-default-size: 3px;         /* CUSTOMIZE: Minimal */
+    --md-sys-shape-corner-medium-default-size: 6px;        /* CUSTOMIZE: GitHub standard */
+    --md-sys-shape-corner-large-default-size: 12px;        /* CUSTOMIZE: Emphasized */
+    --md-sys-shape-corner-extra-large-default-size: 28px;  /* CUSTOMIZE: Kept same */
 }
 ```
 

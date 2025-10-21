@@ -1,92 +1,92 @@
 :root {
-    /* Primary palette derived from #0033A1 */
+    /* Primary palette - GitHub-inspired blue (based on #0969da) */
     --md-ref-palette-primary0: #00040d;
-    --md-ref-palette-primary10: #001239;
-    --md-ref-palette-primary20: #001f60;
-    --md-ref-palette-primary30: #002d82;
-    --md-ref-palette-primary40: #0033a1;
-    --md-ref-palette-primary50: #1a46bb;
-    --md-ref-palette-primary60: #345fd6;
-    --md-ref-palette-primary70: #4c78f0;
-    --md-ref-palette-primary80: #7998ff;
-    --md-ref-palette-primary90: #b4c6ff;
-    --md-ref-palette-primary95: #dfe7ff;
-    --md-ref-palette-primary99: #f6f9ff;
+    --md-ref-palette-primary10: #001d3d;
+    --md-ref-palette-primary20: #003d7a;
+    --md-ref-palette-primary30: #0550ae;
+    --md-ref-palette-primary40: #0969da;
+    --md-ref-palette-primary50: #1f75fe;
+    --md-ref-palette-primary60: #3584e4;
+    --md-ref-palette-primary70: #539bf5;
+    --md-ref-palette-primary80: #80b3ff;
+    --md-ref-palette-primary90: #b6d0ff;
+    --md-ref-palette-primary95: #ddf4ff;
+    --md-ref-palette-primary99: #f6f8fa;
     --md-ref-palette-primary100: #ffffff;
 
-    /* Secondary palette derived from #0A2240 */
-    --md-ref-palette-secondary0: #000307;
-    --md-ref-palette-secondary10: #020a16;
-    --md-ref-palette-secondary20: #061329;
-    --md-ref-palette-secondary30: #091c38;
-    --md-ref-palette-secondary40: #0a2240;
-    --md-ref-palette-secondary50: #1b3558;
-    --md-ref-palette-secondary60: #2d486f;
-    --md-ref-palette-secondary70: #3f5d88;
-    --md-ref-palette-secondary80: #56759f;
-    --md-ref-palette-secondary90: #89a2c3;
-    --md-ref-palette-secondary95: #c0cee3;
-    --md-ref-palette-secondary99: #eef4fa;
+    /* Secondary palette - GitHub-inspired neutral grays (based on #6e7781) */
+    --md-ref-palette-secondary0: #000000;
+    --md-ref-palette-secondary10: #0d1117;
+    --md-ref-palette-secondary20: #161b22;
+    --md-ref-palette-secondary30: #21262d;
+    --md-ref-palette-secondary40: #30363d;
+    --md-ref-palette-secondary50: #484f58;
+    --md-ref-palette-secondary60: #6e7781;
+    --md-ref-palette-secondary70: #8b949e;
+    --md-ref-palette-secondary80: #afb8c1;
+    --md-ref-palette-secondary90: #d0d7de;
+    --md-ref-palette-secondary95: #e6eaef;
+    --md-ref-palette-secondary99: #f6f8fa;
     --md-ref-palette-secondary100: #ffffff;
 
-    /* Tertiary palette derived from #F37121 */
-    --md-ref-palette-tertiary0: #170500;
-    --md-ref-palette-tertiary10: #2f0b00;
-    --md-ref-palette-tertiary20: #511600;
-    --md-ref-palette-tertiary30: #742300;
-    --md-ref-palette-tertiary40: #96330b;
-    --md-ref-palette-tertiary50: #bb4618;
-    --md-ref-palette-tertiary60: #f37121;
-    --md-ref-palette-tertiary70: #ff8c48;
-    --md-ref-palette-tertiary80: #ffb783;
-    --md-ref-palette-tertiary90: #ffd9bf;
-    --md-ref-palette-tertiary95: #ffebdf;
-    --md-ref-palette-tertiary99: #fff8f2;
+    /* Tertiary palette - GitHub-inspired green (based on #1a7f37 for success) */
+    --md-ref-palette-tertiary0: #000000;
+    --md-ref-palette-tertiary10: #003d19;
+    --md-ref-palette-tertiary20: #055d20;
+    --md-ref-palette-tertiary30: #116329;
+    --md-ref-palette-tertiary40: #1a7f37;
+    --md-ref-palette-tertiary50: #2da44e;
+    --md-ref-palette-tertiary60: #3fb950;
+    --md-ref-palette-tertiary70: #56d364;
+    --md-ref-palette-tertiary80: #7ee787;
+    --md-ref-palette-tertiary90: #aff5b4;
+    --md-ref-palette-tertiary95: #dafbe1;
+    --md-ref-palette-tertiary99: #f6f8fa;
     --md-ref-palette-tertiary100: #ffffff;
 
-    /* Neutral palette for surfaces */
+    /* Neutral palette for surfaces - GitHub-inspired (based on #24292f) */
     --md-ref-palette-neutral0: #000000;
-    --md-ref-palette-neutral10: #121926;
-    --md-ref-palette-neutral20: #1f2937;
-    --md-ref-palette-neutral30: #273144;
-    --md-ref-palette-neutral40: #2f3a52;
-    --md-ref-palette-neutral50: #47556b;
-    --md-ref-palette-neutral60: #61708a;
-    --md-ref-palette-neutral70: #7e8ca8;
-    --md-ref-palette-neutral80: #a0adc7;
-    --md-ref-palette-neutral90: #d3daea;
-    --md-ref-palette-neutral95: #e9eff8;
-    --md-ref-palette-neutral99: #f7f9ff;
+    --md-ref-palette-neutral10: #0d1117;
+    --md-ref-palette-neutral20: #161b22;
+    --md-ref-palette-neutral30: #1c2128;
+    --md-ref-palette-neutral40: #24292f;
+    --md-ref-palette-neutral50: #32383f;
+    --md-ref-palette-neutral60: #484f58;
+    --md-ref-palette-neutral70: #6e7781;
+    --md-ref-palette-neutral80: #8b949e;
+    --md-ref-palette-neutral90: #d0d7de;
+    --md-ref-palette-neutral95: #eaeef2;
+    --md-ref-palette-neutral99: #f6f8fa;
     --md-ref-palette-neutral100: #ffffff;
 
-    /* Neutral variant palette for outlines */
-    --md-ref-palette-neutral-variant0: #03060c;
-    --md-ref-palette-neutral-variant10: #121825;
-    --md-ref-palette-neutral-variant20: #1d2533;
-    --md-ref-palette-neutral-variant30: #283141;
-    --md-ref-palette-neutral-variant40: #313a4c;
-    --md-ref-palette-neutral-variant50: #495362;
-    --md-ref-palette-neutral-variant60: #626d7d;
-    --md-ref-palette-neutral-variant70: #7c8899;
-    --md-ref-palette-neutral-variant80: #a3aec0;
-    --md-ref-palette-neutral-variant90: #d2d9e6;
-    --md-ref-palette-neutral-variant95: #e7edf7;
-    --md-ref-palette-neutral-variant99: #f6f8ff;
+    /* Neutral variant palette for outlines - GitHub border colors */
+    --md-ref-palette-neutral-variant0: #000000;
+    --md-ref-palette-neutral-variant10: #0d1117;
+    --md-ref-palette-neutral-variant20: #161b22;
+    --md-ref-palette-neutral-variant30: #21262d;
+    --md-ref-palette-neutral-variant40: #30363d;
+    --md-ref-palette-neutral-variant50: #484f58;
+    --md-ref-palette-neutral-variant60: #6e7781;
+    --md-ref-palette-neutral-variant70: #8b949e;
+    --md-ref-palette-neutral-variant80: #afb8c1;
+    --md-ref-palette-neutral-variant90: #d0d7de;
+    --md-ref-palette-neutral-variant95: #e1e4e8;
+    --md-ref-palette-neutral-variant99: #f6f8fa;
     --md-ref-palette-neutral-variant100: #ffffff;
 
-    /* Error palette retains accessible reds */
+    /* Error palette - GitHub-inspired red (based on #d1242f) */
     --md-ref-palette-error0: #000000;
-    --md-ref-palette-error10: #410001;
-    --md-ref-palette-error20: #680003;
-    --md-ref-palette-error30: #930006;
-    --md-ref-palette-error40: #ba1a1a;
-    --md-ref-palette-error50: #de3730;
-    --md-ref-palette-error60: #ff5449;
-    --md-ref-palette-error70: #ff897d;
-    --md-ref-palette-error80: #ffb4ab;
-    --md-ref-palette-error90: #ffdad6;
-    --md-ref-palette-error95: #ffedea;
-    --md-ref-palette-error99: #fffbf9;
+    --md-ref-palette-error10: #450a0a;
+    --md-ref-palette-error20: #86181d;
+    --md-ref-palette-error30: #a40e26;
+    --md-ref-palette-error40: #cf222e;
+    --md-ref-palette-error50: #d1242f;
+    --md-ref-palette-error60: #f85149;
+    --md-ref-palette-error70: #ff7b72;
+    --md-ref-palette-error80: #ffa198;
+    --md-ref-palette-error90: #ffdcd7;
+    --md-ref-palette-error95: #ffebe9;
+    --md-ref-palette-error99: #fff5f5;
     --md-ref-palette-error100: #ffffff;
 
     --md-ref-palette-black: #000000;

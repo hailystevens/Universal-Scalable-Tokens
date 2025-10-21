@@ -12,27 +12,27 @@
 /* -------------------------------------------------------------------------- */
 
 :root {
-    /* Spacing scale */
-    --ust-space-2xs: 0.25rem;
-    --ust-space-xs: 0.5rem;
-    --ust-space-sm: 0.75rem;
-    --ust-space-md: 1rem;
-    --ust-space-lg: 1.5rem;
-    --ust-space-xl: 2rem;
-    --ust-space-2xl: 3rem;
+    /* Spacing scale - GitHub 8px grid */
+    --ust-space-2xs: 0.25rem;  /* 4px */
+    --ust-space-xs: 0.5rem;    /* 8px */
+    --ust-space-sm: 0.75rem;   /* 12px */
+    --ust-space-md: 1rem;      /* 16px */
+    --ust-space-lg: 1.5rem;    /* 24px */
+    --ust-space-xl: 2rem;      /* 32px */
+    --ust-space-2xl: 3rem;     /* 48px */
 
-    /* Border widths & radii */
+    /* Border widths & radii - GitHub style */
     --ust-border-width-hairline: 1px;
     --ust-border-width-strong: 2px;
-    --ust-radius-sm: var(--md-sys-shape-corner-small-default-size, 8px);
-    --ust-radius-md: var(--md-sys-shape-corner-medium-default-size, 12px);
-    --ust-radius-lg: var(--md-sys-shape-corner-large-default-size, 16px);
+    --ust-radius-sm: var(--md-sys-shape-corner-small-default-size, 3px);
+    --ust-radius-md: var(--md-sys-shape-corner-medium-default-size, 6px);
+    --ust-radius-lg: var(--md-sys-shape-corner-large-default-size, 12px);
     --ust-radius-pill: 9999px;
 
-    /* Typography helpers */
-    --ust-font-family-base: var(--md-ref-typeface-plain, "Roboto", "Helvetica Neue", Arial, sans-serif);
-    --ust-font-family-alt: var(--md-ref-typeface-brand, "Roboto", "Helvetica Neue", Arial, sans-serif);
-    --ust-font-family-mono: "Roboto Mono", "Fira Mono", "SFMono-Regular", monospace;
+    /* Typography helpers - GitHub system fonts */
+    --ust-font-family-base: var(--md-ref-typeface-plain, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif);
+    --ust-font-family-alt: var(--md-ref-typeface-brand, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif);
+    --ust-font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
     --ust-line-height-dense: 1.25;
     --ust-line-height-default: 1.5;
 
@@ -52,24 +52,19 @@
     --ust-color-destructive: var(--md-sys-color-error);
     --ust-color-destructive-contrast: var(--md-sys-color-on-error);
 
-    /* Effects */
-    --ust-focus-outline-width: 3px;
-    --ust-focus-outline-offset: 2px;
-    --ust-focus-outline-color: color-mix(in srgb, var(--md-sys-color-primary) 65%, transparent);
-    --ust-transition-base: var(--md-sys-motion-duration-200, 200ms) cubic-bezier(
-        var(--md-sys-motion-easing-standard-x0, 0.2),
-        var(--md-sys-motion-easing-standard-y0, 0),
-        var(--md-sys-motion-easing-standard-x1, 0),
-        var(--md-sys-motion-easing-standard-y1, 1)
-    );
-    --ust-shadow-raised: 0 6px 18px color-mix(in srgb, var(--md-sys-color-shadow, rgba(0, 0, 0, 0.25)) 32%, transparent);
-    --ust-shadow-overlay: 0 32px 60px color-mix(in srgb, var(--md-sys-color-shadow, rgba(0, 0, 0, 0.35)) 48%, transparent);
+    /* Effects - GitHub subtle style */
+    --ust-focus-outline-width: 2px;
+    --ust-focus-outline-offset: 0px;
+    --ust-focus-outline-color: var(--md-sys-color-primary);
+    --ust-transition-base: 150ms cubic-bezier(0.2, 0, 0, 1);
+    --ust-shadow-raised: 0 1px 0 rgba(31, 35, 40, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    --ust-shadow-overlay: 0 8px 24px rgba(140, 149, 159, 0.2);
 
-    /* Component sizing */
+    /* Component sizing - GitHub style */
     --ust-container-max-width: 72rem;
-    --ust-control-height-sm: 2rem;
-    --ust-control-height-md: 2.75rem;
-    --ust-control-height-lg: 3.25rem;
+    --ust-control-height-sm: 1.75rem;  /* 28px */
+    --ust-control-height-md: 2rem;     /* 32px */
+    --ust-control-height-lg: 2.5rem;   /* 40px */
 }
 
 *, *::before, *::after {
@@ -358,20 +353,19 @@ input[type="reset"],
     justify-content: center;
     gap: var(--ust-space-xs);
     min-height: var(--ust-control-height-md);
-    padding: 0 var(--ust-space-lg);
-    border-radius: var(--ust-radius-pill);
+    padding: 5px 16px;
+    border-radius: var(--ust-radius-md);
     border: var(--ust-border-width-hairline) solid transparent;
     font-family: var(--md-sys-typescale-label-large-font);
-    font-weight: var(--md-sys-typescale-label-large-weight);
+    font-weight: var(--md-ref-typeface-weight-medium);
     font-size: var(--md-sys-typescale-label-large-size);
-    letter-spacing: var(--md-sys-typescale-label-large-tracking);
-    text-transform: var(--md-sys-typescale-label-large-text-transform);
+    line-height: 20px;
     cursor: pointer;
     background-color: var(--ust-color-accent);
     color: var(--ust-color-accent-contrast);
-    transition: transform var(--ust-transition-base), box-shadow var(--ust-transition-base),
-        background-color var(--ust-transition-base), color var(--ust-transition-base);
+    transition: background-color var(--ust-transition-base), border-color var(--ust-transition-base);
     text-decoration: none;
+    white-space: nowrap;
 }
 
 button:hover,
@@ -379,8 +373,7 @@ input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 .ust-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--ust-shadow-raised);
+    filter: brightness(0.95);
 }
 
 button:active,
@@ -388,8 +381,7 @@ input[type="button"]:active,
 input[type="submit"]:active,
 input[type="reset"]:active,
 .ust-btn:active {
-    transform: translateY(0);
-    box-shadow: none;
+    filter: brightness(0.9);
 }
 
 button:focus-visible,
@@ -406,36 +398,43 @@ input[type="button"]:disabled,
 input[type="submit"]:disabled,
 input[type="reset"]:disabled,
 .ust-btn:disabled {
-    opacity: 0.5;
+    opacity: 0.6;
     cursor: not-allowed;
-    box-shadow: none;
 }
 
 .ust-btn--primary {
     background-color: var(--ust-color-accent);
     color: var(--ust-color-accent-contrast);
+    border-color: rgba(31, 35, 40, 0.15);
+    box-shadow: 0 1px 0 rgba(31, 35, 40, 0.04);
 }
 
 .ust-btn--secondary {
-    background-color: var(--ust-color-secondary);
-    color: var(--ust-color-secondary-contrast);
+    background-color: var(--ust-color-surface);
+    color: var(--ust-color-text);
+    border-color: var(--ust-color-outline);
 }
 
 .ust-btn--surface {
-    background-color: var(--ust-color-surface-variant);
-    color: var(--ust-color-text-strong);
+    background-color: var(--ust-color-surface);
+    color: var(--ust-color-text);
     border-color: var(--ust-color-outline);
 }
 
 .ust-btn--outline {
     background-color: transparent;
     color: var(--ust-color-accent);
-    border-color: currentColor;
+    border-color: var(--ust-color-outline);
 }
 
 .ust-btn--ghost {
     background-color: transparent;
     color: var(--ust-color-text);
+    border-color: transparent;
+}
+
+.ust-btn--ghost:hover {
+    background-color: color-mix(in srgb, var(--ust-color-outline) 10%, transparent);
 }
 
 .ust-btn--link {
@@ -443,13 +442,17 @@ input[type="reset"]:disabled,
     border-color: transparent;
     color: var(--ust-color-accent);
     padding-inline: 0;
+    text-decoration: none;
+}
+
+.ust-btn--link:hover {
     text-decoration: underline;
-    text-underline-offset: 0.2em;
 }
 
 .ust-btn--destructive {
     background-color: var(--ust-color-destructive);
     color: var(--ust-color-destructive-contrast);
+    border-color: rgba(31, 35, 40, 0.15);
 }
 
 .ust-btn--icon {
@@ -488,16 +491,15 @@ textarea,
 .ust-input {
     inline-size: 100%;
     min-height: var(--ust-control-height-md);
-    padding: 0 var(--ust-space-md);
+    padding: 5px 12px;
     border-radius: var(--ust-radius-md);
     border: var(--ust-border-width-hairline) solid var(--ust-color-outline);
     background-color: var(--ust-color-surface);
     color: var(--ust-color-text);
     font-family: var(--ust-font-family-base);
     font-size: var(--md-sys-typescale-body-medium-size);
-    line-height: var(--md-sys-typescale-body-medium-line-height);
-    transition: border-color var(--ust-transition-base), box-shadow var(--ust-transition-base),
-        background-color var(--ust-transition-base), color var(--ust-transition-base);
+    line-height: 20px;
+    transition: border-color 80ms cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 input::placeholder,
@@ -510,7 +512,7 @@ select:focus-visible,
 textarea:focus-visible,
 .ust-input:focus-visible {
     outline: var(--ust-focus-outline-width) solid var(--ust-focus-outline-color);
-    outline-offset: var(--ust-focus-outline-offset);
+    outline-offset: -1px;
     border-color: var(--ust-color-accent);
 }
 
@@ -518,9 +520,9 @@ input:disabled,
 select:disabled,
 textarea:disabled,
 .ust-input:disabled {
-    opacity: 0.55;
+    opacity: 0.6;
     cursor: not-allowed;
-    background-color: color-mix(in srgb, var(--ust-color-surface) 90%, transparent);
+    background-color: color-mix(in srgb, var(--ust-color-outline) 5%, var(--ust-color-surface));
 }
 
 input[readonly],
@@ -921,15 +923,16 @@ meter::-webkit-meter-even-less-good-value {
     display: inline-flex;
     align-items: center;
     gap: var(--ust-space-2xs);
-    padding: 0 var(--ust-space-sm);
-    border-radius: var(--ust-radius-pill);
-    background-color: color-mix(in srgb, var(--ust-color-accent) 15%, transparent);
+    padding: 0 7px;
+    height: 20px;
+    border-radius: 2em;
+    background-color: color-mix(in srgb, var(--ust-color-accent) 12%, transparent);
     color: var(--ust-color-accent);
     font-family: var(--md-sys-typescale-label-small-font);
-    font-size: var(--md-sys-typescale-label-small-size);
-    line-height: var(--md-sys-typescale-label-small-line-height);
-    text-transform: uppercase;
-    letter-spacing: var(--md-sys-typescale-label-small-tracking);
+    font-size: 12px;
+    font-weight: var(--md-ref-typeface-weight-medium);
+    line-height: 18px;
+    border: var(--ust-border-width-hairline) solid transparent;
 }
 
 .ust-badge--solid {
@@ -939,17 +942,25 @@ meter::-webkit-meter-even-less-good-value {
 
 .ust-badge--outline {
     background-color: transparent;
-    border: var(--ust-border-width-hairline) solid currentColor;
+    border-color: var(--ust-color-outline);
+    color: var(--ust-color-text);
 }
 
 .ust-badge--success {
-    background-color: color-mix(in srgb, var(--ust-color-secondary) 20%, transparent);
-    color: color-mix(in srgb, var(--ust-color-secondary) 60%, var(--ust-color-accent) 40%);
+    background-color: color-mix(in srgb, var(--md-sys-color-tertiary) 12%, transparent);
+    color: var(--md-sys-color-tertiary);
+    border-color: transparent;
 }
 
 .ust-badge--warning {
-    background-color: color-mix(in srgb, var(--ust-color-destructive) 15%, transparent);
-    color: color-mix(in srgb, var(--ust-color-destructive) 65%, var(--ust-color-text) 35%);
+    background-color: color-mix(in srgb, #bf8700 12%, transparent);
+    color: #9a6700;
+    border-color: transparent;
+}
+
+.ust-badge--accent {
+    background-color: color-mix(in srgb, var(--ust-color-accent) 12%, transparent);
+    color: var(--ust-color-accent);
 }
 
 .ust-chip,
@@ -957,12 +968,26 @@ meter::-webkit-meter-even-less-good-value {
     display: inline-flex;
     align-items: center;
     gap: var(--ust-space-xs);
-    padding: 0 var(--ust-space-md);
-    min-height: var(--ust-control-height-sm);
-    border-radius: var(--ust-radius-pill);
+    padding: 0 12px;
+    height: 28px;
+    border-radius: 2em;
     border: var(--ust-border-width-hairline) solid var(--ust-color-outline);
-    background-color: var(--ust-color-surface);
+    background-color: color-mix(in srgb, var(--ust-color-outline) 5%, var(--ust-color-surface));
     color: var(--ust-color-text);
+    font-size: var(--md-sys-typescale-label-small-size);
+    font-weight: var(--md-ref-typeface-weight-medium);
+}
+
+.ust-chip--accent {
+    background-color: color-mix(in srgb, var(--ust-color-accent) 10%, var(--ust-color-surface));
+    color: var(--ust-color-accent);
+    border-color: color-mix(in srgb, var(--ust-color-accent) 30%, transparent);
+}
+
+.ust-chip--success {
+    background-color: color-mix(in srgb, var(--md-sys-color-tertiary) 10%, var(--ust-color-surface));
+    color: var(--md-sys-color-tertiary);
+    border-color: color-mix(in srgb, var(--md-sys-color-tertiary) 30%, transparent);
 }
 
 .ust-chip__close {
@@ -1018,34 +1043,31 @@ meter::-webkit-meter-even-less-good-value {
 table,
 .ust-table {
     inline-size: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
+    border-collapse: collapse;
     background-color: var(--ust-color-surface);
-    border: var(--ust-border-width-hairline) solid color-mix(in srgb, var(--ust-color-outline) 40%, transparent);
-    border-radius: var(--ust-radius-lg);
+    border: var(--ust-border-width-hairline) solid var(--ust-color-outline);
+    border-radius: var(--ust-radius-md);
     overflow: hidden;
 }
 
 table thead,
 .ust-table thead {
-    background-color: color-mix(in srgb, var(--ust-color-surface-variant) 75%, transparent);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: 0.75rem;
+    background-color: color-mix(in srgb, var(--ust-color-outline) 8%, var(--ust-color-surface));
+    font-weight: var(--md-ref-typeface-weight-medium);
 }
 
 table th,
 table td,
 .ust-table th,
 .ust-table td {
-    padding: var(--ust-space-sm) var(--ust-space-md);
+    padding: 8px 16px;
     text-align: left;
-    border-bottom: 1px solid color-mix(in srgb, var(--ust-color-outline) 30%, transparent);
+    border-bottom: 1px solid var(--ust-color-outline);
 }
 
 table tbody tr:hover,
 .ust-table tbody tr:hover {
-    background-color: color-mix(in srgb, var(--ust-color-surface-variant) 50%, transparent);
+    background-color: color-mix(in srgb, var(--ust-color-outline) 4%, transparent);
 }
 
 table tbody tr:last-child td,
@@ -1055,14 +1077,16 @@ table tbody tr:last-child td,
 
 table caption,
 .ust-table caption {
-    caption-side: bottom;
+    caption-side: top;
     padding: var(--ust-space-sm) var(--ust-space-md);
-    color: var(--ust-color-text-muted);
+    color: var(--ust-color-text);
+    font-weight: var(--md-ref-typeface-weight-medium);
+    text-align: left;
 }
 
 .ust-table--compact th,
 .ust-table--compact td {
-    padding-block: var(--ust-space-xs);
+    padding: 4px 8px;
 }
 
 table [aria-sort="ascending"],
@@ -1107,10 +1131,9 @@ table [aria-sort="descending"],
 .ust-panel,
 .ust-tile {
     background-color: var(--ust-color-surface);
-    border-radius: var(--ust-radius-lg);
-    border: 1px solid color-mix(in srgb, var(--ust-color-outline) 35%, transparent);
-    padding: var(--ust-space-lg);
-    box-shadow: var(--ust-shadow-raised);
+    border-radius: var(--ust-radius-md);
+    border: 1px solid var(--ust-color-outline);
+    padding: var(--ust-space-md);
     display: flex;
     flex-direction: column;
     gap: var(--ust-space-md);
@@ -1329,26 +1352,28 @@ details.ust-accordion[open] {
     align-items: center;
     padding: var(--ust-space-md);
     border-radius: var(--ust-radius-md);
-    border: 1px solid color-mix(in srgb, var(--ust-color-outline) 30%, transparent);
-    background-color: color-mix(in srgb, var(--ust-color-surface) 90%, transparent);
-    box-shadow: var(--ust-shadow-raised);
+    border: 1px solid var(--ust-color-outline);
+    background-color: var(--ust-color-surface);
 }
 
 .ust-alert--info {
-    border-color: color-mix(in srgb, var(--ust-color-secondary) 70%, transparent);
+    border-color: var(--md-sys-color-primary);
+    background-color: color-mix(in srgb, var(--md-sys-color-primary) 6%, var(--ust-color-surface));
 }
 
 .ust-alert--success {
-    border-color: color-mix(in srgb, var(--ust-color-secondary) 60%, var(--ust-color-accent) 40%);
+    border-color: var(--md-sys-color-tertiary);
+    background-color: color-mix(in srgb, var(--md-sys-color-tertiary) 6%, var(--ust-color-surface));
 }
 
 .ust-alert--warning {
-    border-color: color-mix(in srgb, var(--ust-color-destructive) 45%, var(--ust-color-secondary) 55%);
+    border-color: #bf8700;
+    background-color: color-mix(in srgb, #bf8700 6%, var(--ust-color-surface));
 }
 
 .ust-alert--error {
     border-color: var(--ust-color-destructive);
-    background-color: color-mix(in srgb, var(--ust-color-destructive) 12%, transparent);
+    background-color: color-mix(in srgb, var(--ust-color-destructive) 6%, var(--ust-color-surface));
 }
 
 .ust-toast {
